@@ -4,8 +4,8 @@
 #SBATCH --partition=main
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16
-#SBATCH --mem=32GB
+#SBATCH --cpus-per-task=32
+#SBATCH --mem=64GB
 #SBATCH --time=24:00:00
 #SBATCH --output=logs/chembl_retrieval_%j.out
 #SBATCH --error=logs/chembl_retrieval_%j.err
@@ -29,15 +29,11 @@ echo "Memory: $SLURM_MEM_PER_NODE MB"
 echo "Start Time: $(date)"
 echo "=================================================="
 
-# Load required modules
-module purge
-module load gcc/11.3.0
-module load python/3.11.3
+# Initialize conda for bash
+eval "$(conda shell.bash hook)"
 
-# Activate your Python environment
-# Option 1: If using conda
-source ~/.bashrc
-conda activate plot  # or your environment name
+# Activate conda environment using full path
+conda activate /home1/aoxu/.conda/envs/PoseBench
 
 # Option 2: If using venv
 # source /path/to/your/venv/bin/activate
@@ -65,10 +61,10 @@ echo "=================================================="
 
 python retrieve_chembl_parallel.py \
     --input data/annotation_table_with_uniprot.parquet \
-    --output data/chembl_parallel \
-    --final-output data/chembl_activities_merged.parquet \
+    --output /project2/katritch_223/aoxu/PLATE-VS/raw \
+    --final-output /project2/katritch_223/aoxu/PLATE-VS/chembl_activities_merged.parquet \
     --workers $SLURM_CPUS_PER_TASK \
-    --max-activities 1000 \
+    --max-activities 10000 \
     --standard-types IC50 Ki Kd EC50
 
 EXIT_CODE=$?
