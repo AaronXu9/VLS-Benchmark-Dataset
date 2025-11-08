@@ -33,7 +33,7 @@ echo "=================================================="
 eval "$(conda shell.bash hook)"
 
 # Activate conda environment using full path
-conda activate /home1/aoxu/.conda/envs/PoseBench
+conda activate /home1/aoxu/.conda/envs/plinder
 
 # Option 2: If using venv
 # source /path/to/your/venv/bin/activate
