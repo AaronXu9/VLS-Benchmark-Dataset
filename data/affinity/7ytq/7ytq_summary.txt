@@ -1,0 +1,11 @@
+PDB ID: 7ytq
+Total activities: 12
+Unique molecules: 12
+Activity types: IC50, Ki
+Entries with SMILES: 12
+ChEMBL targets: CHEMBL2176853
+UniProt IDs: Q9UJ71
+With confidence scores: 12
+
+Confidence score distribution:
+  Score 9: 12

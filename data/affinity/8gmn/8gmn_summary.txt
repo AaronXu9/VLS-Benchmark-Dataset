@@ -1,0 +1,12 @@
+PDB ID: 8gmn
+Total activities: 226
+Unique molecules: 193
+Activity types: IC50, Ki
+Entries with SMILES: 226
+ChEMBL targets: CHEMBL3913
+UniProt IDs: P09871
+With confidence scores: 226
+
+Confidence score distribution:
+  Score 8: 68
+  Score 9: 158

@@ -1,0 +1,12 @@
+PDB ID: 8fgr
+Total activities: 1957
+Unique molecules: 957
+Activity types: IC50, Ki
+Entries with SMILES: 1957
+ChEMBL targets: CHEMBL4803
+UniProt IDs: P29474
+With confidence scores: 1957
+
+Confidence score distribution:
+  Score 8: 780
+  Score 9: 1177

@@ -1,0 +1,12 @@
+PDB ID: 7tx2
+Total activities: 1207
+Unique molecules: 218
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1207
+ChEMBL targets: CHEMBL4617
+UniProt IDs: P11086
+With confidence scores: 1207
+
+Confidence score distribution:
+  Score 8: 218
+  Score 9: 989

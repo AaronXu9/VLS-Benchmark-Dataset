@@ -1,0 +1,11 @@
+PDB ID: 8cis
+Total activities: 2
+Unique molecules: 2
+Activity types: Kd
+Entries with SMILES: 2
+ChEMBL targets: CHEMBL4295733
+UniProt IDs: P26038
+With confidence scores: 2
+
+Confidence score distribution:
+  Score 9: 2

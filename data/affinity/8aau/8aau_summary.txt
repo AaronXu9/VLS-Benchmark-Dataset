@@ -1,0 +1,12 @@
+PDB ID: 8aau
+Total activities: 3298
+Unique molecules: 1381
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 3297
+ChEMBL targets: CHEMBL3836
+UniProt IDs: P53667
+With confidence scores: 3298
+
+Confidence score distribution:
+  Score 8: 1347
+  Score 9: 1951

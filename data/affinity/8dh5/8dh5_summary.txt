@@ -1,0 +1,11 @@
+PDB ID: 8dh5
+Total activities: 8
+Unique molecules: 8
+Activity types: IC50
+Entries with SMILES: 8
+ChEMBL targets: CHEMBL1075072
+UniProt IDs: P00573
+With confidence scores: 8
+
+Confidence score distribution:
+  Score 9: 8

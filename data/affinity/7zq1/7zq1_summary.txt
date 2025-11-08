@@ -1,0 +1,11 @@
+PDB ID: 7zq1
+Total activities: 27
+Unique molecules: 27
+Activity types: IC50
+Entries with SMILES: 27
+ChEMBL targets: CHEMBL4523307
+UniProt IDs: Q32ZE1
+With confidence scores: 27
+
+Confidence score distribution:
+  Score 9: 27

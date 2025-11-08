@@ -1,0 +1,11 @@
+PDB ID: 8d0x
+Total activities: 28
+Unique molecules: 7
+Activity types: IC50, Ki
+Entries with SMILES: 28
+ChEMBL targets: CHEMBL4985
+UniProt IDs: Q9Y231
+With confidence scores: 28
+
+Confidence score distribution:
+  Score 9: 28

@@ -1,0 +1,11 @@
+PDB ID: 8juc
+Total activities: 7
+Unique molecules: 4
+Activity types: Kd
+Entries with SMILES: 7
+ChEMBL targets: CHEMBL4105763
+UniProt IDs: Q9NPD8
+With confidence scores: 7
+
+Confidence score distribution:
+  Score 9: 7

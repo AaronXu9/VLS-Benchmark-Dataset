@@ -1,0 +1,12 @@
+PDB ID: 7qxy
+Total activities: 989
+Unique molecules: 752
+Activity types: IC50, Ki
+Entries with SMILES: 989
+ChEMBL targets: CHEMBL2611
+UniProt IDs: P09958
+With confidence scores: 989
+
+Confidence score distribution:
+  Score 8: 61
+  Score 9: 928

@@ -1,0 +1,12 @@
+PDB ID: 8huo
+Total activities: 2019
+Unique molecules: 761
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 2019
+ChEMBL targets: CHEMBL3979
+UniProt IDs: Q03181
+With confidence scores: 2019
+
+Confidence score distribution:
+  Score 8: 691
+  Score 9: 1328

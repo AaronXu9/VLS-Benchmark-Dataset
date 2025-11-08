@@ -1,0 +1,11 @@
+PDB ID: 8doc
+Total activities: 91
+Unique molecules: 79
+Activity types: IC50
+Entries with SMILES: 91
+ChEMBL targets: CHEMBL4523306
+UniProt IDs: Q28175
+With confidence scores: 91
+
+Confidence score distribution:
+  Score 9: 91

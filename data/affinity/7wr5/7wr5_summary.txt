@@ -1,0 +1,12 @@
+PDB ID: 7wr5
+Total activities: 167
+Unique molecules: 92
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 167
+ChEMBL targets: CHEMBL6093, CHEMBL2226
+UniProt IDs: P0DP23, P49662
+With confidence scores: 167
+
+Confidence score distribution:
+  Score 8: 68
+  Score 9: 99

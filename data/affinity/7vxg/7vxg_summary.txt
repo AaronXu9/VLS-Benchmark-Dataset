@@ -1,0 +1,12 @@
+PDB ID: 7vxg
+Total activities: 11057
+Unique molecules: 3581
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 10878
+ChEMBL targets: CHEMBL3864
+UniProt IDs: Q06124
+With confidence scores: 11057
+
+Confidence score distribution:
+  Score 8: 3285
+  Score 9: 7772

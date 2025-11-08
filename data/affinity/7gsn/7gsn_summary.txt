@@ -1,0 +1,12 @@
+PDB ID: 7gsn
+Total activities: 15692
+Unique molecules: 4662
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 15290
+ChEMBL targets: CHEMBL335
+UniProt IDs: P18031
+With confidence scores: 15692
+
+Confidence score distribution:
+  Score 8: 3945
+  Score 9: 11747

@@ -1,0 +1,11 @@
+PDB ID: 8eoh
+Total activities: 93
+Unique molecules: 90
+Activity types: IC50
+Entries with SMILES: 93
+ChEMBL targets: CHEMBL4523494
+UniProt IDs: Q9UNU6
+With confidence scores: 93
+
+Confidence score distribution:
+  Score 9: 93

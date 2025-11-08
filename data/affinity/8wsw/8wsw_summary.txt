@@ -1,0 +1,12 @@
+PDB ID: 8wsw
+Total activities: 1619
+Unique molecules: 574
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1618
+ChEMBL targets: CHEMBL5932
+UniProt IDs: P53671
+With confidence scores: 1619
+
+Confidence score distribution:
+  Score 8: 199
+  Score 9: 1420

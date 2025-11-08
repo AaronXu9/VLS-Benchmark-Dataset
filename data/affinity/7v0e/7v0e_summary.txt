@@ -1,0 +1,11 @@
+PDB ID: 7v0e
+Total activities: 123
+Unique molecules: 78
+Activity types: IC50
+Entries with SMILES: 123
+ChEMBL targets: CHEMBL6095
+UniProt IDs: Q9UBC3
+With confidence scores: 123
+
+Confidence score distribution:
+  Score 9: 123

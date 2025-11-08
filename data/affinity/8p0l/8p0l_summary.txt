@@ -1,0 +1,12 @@
+PDB ID: 8p0l
+Total activities: 2383
+Unique molecules: 882
+Activity types: IC50, Ki
+Entries with SMILES: 2383
+ChEMBL targets: CHEMBL5921
+UniProt IDs: O60502
+With confidence scores: 2383
+
+Confidence score distribution:
+  Score 8: 87
+  Score 9: 2296

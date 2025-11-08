@@ -1,0 +1,12 @@
+PDB ID: 8bem
+Total activities: 1755
+Unique molecules: 961
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1754
+ChEMBL targets: CHEMBL4202
+UniProt IDs: Q9H2G2
+With confidence scores: 1755
+
+Confidence score distribution:
+  Score 8: 958
+  Score 9: 797

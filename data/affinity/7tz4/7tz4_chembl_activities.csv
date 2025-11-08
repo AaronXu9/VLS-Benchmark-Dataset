@@ -1,0 +1,2 @@
+molecule_chembl_id,canonical_smiles,standard_type,standard_value,standard_units,pchembl_value,activity_comment,assay_chembl_id,confidence_score,target_chembl_id,document_chembl_id,source_pdb_id,source_uniprot_id
+CHEMBL371502,Nc1ncnc2c1ncn2[C@@H]1O[C@H](COS(=O)(=O)NC(=O)c2ccccc2O)[C@@H](O)[C@H]1O,IC50,12.5,nM,7.9,,CHEMBL1228590,8,CHEMBL3308937,CHEMBL1221167,7tz4,Q9HWG3

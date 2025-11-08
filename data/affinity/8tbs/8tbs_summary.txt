@@ -1,0 +1,11 @@
+PDB ID: 8tbs
+Total activities: 60
+Unique molecules: 51
+Activity types: IC50, Ki
+Entries with SMILES: 60
+ChEMBL targets: CHEMBL1075126
+UniProt IDs: P30613
+With confidence scores: 60
+
+Confidence score distribution:
+  Score 9: 60

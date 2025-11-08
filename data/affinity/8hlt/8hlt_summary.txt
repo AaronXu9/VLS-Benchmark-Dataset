@@ -1,0 +1,12 @@
+PDB ID: 8hlt
+Total activities: 1338
+Unique molecules: 798
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1338
+ChEMBL targets: CHEMBL4376
+UniProt IDs: Q92630
+With confidence scores: 1338
+
+Confidence score distribution:
+  Score 8: 125
+  Score 9: 1213

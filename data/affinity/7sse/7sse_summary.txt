@@ -1,0 +1,11 @@
+PDB ID: 7sse
+Total activities: 34
+Unique molecules: 25
+Activity types: Kd
+Entries with SMILES: 34
+ChEMBL targets: CHEMBL5465521
+UniProt IDs: Q9Y4B6
+With confidence scores: 34
+
+Confidence score distribution:
+  Score 9: 34

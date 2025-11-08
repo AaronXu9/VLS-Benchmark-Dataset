@@ -1,0 +1,12 @@
+PDB ID: 7u1u
+Total activities: 123
+Unique molecules: 105
+Activity types: IC50, Ki
+Entries with SMILES: 123
+ChEMBL targets: CHEMBL4263
+UniProt IDs: P17597
+With confidence scores: 123
+
+Confidence score distribution:
+  Score 8: 49
+  Score 9: 74

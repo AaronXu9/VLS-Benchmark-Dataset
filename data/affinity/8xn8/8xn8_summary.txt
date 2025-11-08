@@ -1,0 +1,12 @@
+PDB ID: 8xn8
+Total activities: 73
+Unique molecules: 73
+Activity types: IC50
+Entries with SMILES: 73
+ChEMBL targets: CHEMBL3074
+UniProt IDs: P05480
+With confidence scores: 73
+
+Confidence score distribution:
+  Score 8: 29
+  Score 9: 44

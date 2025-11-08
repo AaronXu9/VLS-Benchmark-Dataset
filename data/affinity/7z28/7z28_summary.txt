@@ -1,0 +1,11 @@
+PDB ID: 7z28
+Total activities: 501
+Unique molecules: 244
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 501
+ChEMBL targets: CHEMBL5939
+UniProt IDs: Q9NZ08
+With confidence scores: 501
+
+Confidence score distribution:
+  Score 9: 501

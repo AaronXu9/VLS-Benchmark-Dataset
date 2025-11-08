@@ -1,0 +1,11 @@
+PDB ID: 7sh0
+Total activities: 419
+Unique molecules: 257
+Activity types: IC50, Ki
+Entries with SMILES: 419
+ChEMBL targets: CHEMBL5043
+UniProt IDs: Q6P179
+With confidence scores: 419
+
+Confidence score distribution:
+  Score 9: 419

@@ -1,0 +1,11 @@
+PDB ID: 8sj0
+Total activities: 161
+Unique molecules: 41
+Activity types: IC50, Kd
+Entries with SMILES: 161
+ChEMBL targets: CHEMBL4523383
+UniProt IDs: Q8C6L5
+With confidence scores: 161
+
+Confidence score distribution:
+  Score 9: 161

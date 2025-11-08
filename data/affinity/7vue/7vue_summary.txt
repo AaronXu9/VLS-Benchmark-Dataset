@@ -1,0 +1,12 @@
+PDB ID: 7vue
+Total activities: 955
+Unique molecules: 476
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 954
+ChEMBL targets: CHEMBL2047
+UniProt IDs: Q96RI1
+With confidence scores: 955
+
+Confidence score distribution:
+  Score 8: 57
+  Score 9: 898

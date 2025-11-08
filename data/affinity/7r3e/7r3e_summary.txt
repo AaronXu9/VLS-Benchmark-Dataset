@@ -1,0 +1,12 @@
+PDB ID: 7r3e
+Total activities: 12
+Unique molecules: 9
+Activity types: IC50
+Entries with SMILES: 12
+ChEMBL targets: CHEMBL3112386
+UniProt IDs: P54292
+With confidence scores: 12
+
+Confidence score distribution:
+  Score 8: 9
+  Score 9: 3

@@ -1,0 +1,12 @@
+PDB ID: 8ome
+Total activities: 4791
+Unique molecules: 419
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 4791
+ChEMBL targets: CHEMBL1275212
+UniProt IDs: P50053
+With confidence scores: 4791
+
+Confidence score distribution:
+  Score 8: 2864
+  Score 9: 1927

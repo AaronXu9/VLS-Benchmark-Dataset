@@ -1,0 +1,11 @@
+PDB ID: 7pwy
+Total activities: 187
+Unique molecules: 57
+Activity types: IC50, Ki
+Entries with SMILES: 187
+ChEMBL targets: CHEMBL4105941
+UniProt IDs: Q8TDX5
+With confidence scores: 187
+
+Confidence score distribution:
+  Score 9: 187

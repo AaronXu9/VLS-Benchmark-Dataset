@@ -1,0 +1,11 @@
+PDB ID: 8dyd
+Total activities: 5
+Unique molecules: 5
+Activity types: IC50, Kd
+Entries with SMILES: 5
+ChEMBL targets: CHEMBL5758
+UniProt IDs: P31040
+With confidence scores: 5
+
+Confidence score distribution:
+  Score 9: 5

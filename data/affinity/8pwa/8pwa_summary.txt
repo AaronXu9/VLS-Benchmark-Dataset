@@ -1,0 +1,12 @@
+PDB ID: 8pwa
+Total activities: 2420
+Unique molecules: 1273
+Activity types: IC50, Kd
+Entries with SMILES: 2420
+ChEMBL targets: CHEMBL4739695, CHEMBL4106140
+UniProt IDs: Q86U44, Q9HCE5
+With confidence scores: 2420
+
+Confidence score distribution:
+  Score 7: 502
+  Score 9: 1918

@@ -1,0 +1,12 @@
+PDB ID: 7ts2
+Total activities: 2307
+Unique molecules: 1293
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 2307
+ChEMBL targets: CHEMBL3568
+UniProt IDs: P29475
+With confidence scores: 2307
+
+Confidence score distribution:
+  Score 8: 945
+  Score 9: 1362

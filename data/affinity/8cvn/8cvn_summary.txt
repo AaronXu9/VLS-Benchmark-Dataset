@@ -1,0 +1,11 @@
+PDB ID: 8cvn
+Total activities: 1648
+Unique molecules: 530
+Activity types: IC50, Ki
+Entries with SMILES: 1648
+ChEMBL targets: CHEMBL1293255
+UniProt IDs: P15428
+With confidence scores: 1648
+
+Confidence score distribution:
+  Score 9: 1648

@@ -1,0 +1,13 @@
+PDB ID: 7zry
+Total activities: 46594
+Unique molecules: 5746
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 46585
+ChEMBL targets: CHEMBL6136, CHEMBL3137262
+UniProt IDs: O60341, Q9UKL0
+With confidence scores: 46594
+
+Confidence score distribution:
+  Score 7: 820
+  Score 8: 1453
+  Score 9: 44321

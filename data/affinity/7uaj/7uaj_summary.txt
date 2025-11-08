@@ -1,0 +1,11 @@
+PDB ID: 7uaj
+Total activities: 4
+Unique molecules: 4
+Activity types: IC50
+Entries with SMILES: 4
+ChEMBL targets: CHEMBL2010633
+UniProt IDs: P03126
+With confidence scores: 4
+
+Confidence score distribution:
+  Score 9: 4

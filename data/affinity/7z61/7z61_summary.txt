@@ -1,0 +1,12 @@
+PDB ID: 7z61
+Total activities: 20847
+Unique molecules: 7421
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 20836
+ChEMBL targets: CHEMBL3267
+UniProt IDs: P48736
+With confidence scores: 20847
+
+Confidence score distribution:
+  Score 8: 1533
+  Score 9: 19314

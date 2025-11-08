@@ -1,0 +1,12 @@
+PDB ID: 7sly
+Total activities: 1366
+Unique molecules: 411
+Activity types: IC50, Kd
+Entries with SMILES: 1366
+ChEMBL targets: CHEMBL4739843
+UniProt IDs: O95497
+With confidence scores: 1366
+
+Confidence score distribution:
+  Score 8: 44
+  Score 9: 1322

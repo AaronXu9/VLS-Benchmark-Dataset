@@ -1,0 +1,12 @@
+PDB ID: 7zaq
+Total activities: 148981
+Unique molecules: 12487
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 148595
+ChEMBL targets: CHEMBL1163125
+UniProt IDs: O60885
+With confidence scores: 148981
+
+Confidence score distribution:
+  Score 8: 59232
+  Score 9: 89749

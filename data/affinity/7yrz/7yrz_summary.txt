@@ -1,0 +1,11 @@
+PDB ID: 7yrz
+Total activities: 40
+Unique molecules: 19
+Activity types: IC50
+Entries with SMILES: 40
+ChEMBL targets: CHEMBL4888440
+UniProt IDs: P0C6X1
+With confidence scores: 40
+
+Confidence score distribution:
+  Score 9: 40

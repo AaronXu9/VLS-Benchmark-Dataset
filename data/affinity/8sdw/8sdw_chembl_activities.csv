@@ -1,0 +1,2 @@
+molecule_chembl_id,canonical_smiles,standard_type,standard_value,standard_units,pchembl_value,activity_comment,assay_chembl_id,confidence_score,target_chembl_id,document_chembl_id,source_pdb_id,source_uniprot_id
+CHEMBL259181,OC[C@H](Cc1ccccc1)Nc1nc(Oc2ccc3c(c2)CCC3)nc2c1ncn2Cc1ccc(-c2ccccc2)cc1,Kd,620.0,nM,6.21,,CHEMBL936308,8,CHEMBL5985,CHEMBL1142220,8sdw,P84077

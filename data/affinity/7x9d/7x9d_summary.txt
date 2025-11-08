@@ -1,0 +1,12 @@
+PDB ID: 7x9d
+Total activities: 169
+Unique molecules: 95
+Activity types: IC50
+Entries with SMILES: 169
+ChEMBL targets: CHEMBL6095, CHEMBL3137291
+UniProt IDs: Q9UBC3, Q9UJW3
+With confidence scores: 169
+
+Confidence score distribution:
+  Score 7: 42
+  Score 9: 127

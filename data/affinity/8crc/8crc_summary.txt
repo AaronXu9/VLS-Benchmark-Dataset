@@ -1,0 +1,12 @@
+PDB ID: 8crc
+Total activities: 6148
+Unique molecules: 2603
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 6148
+ChEMBL targets: CHEMBL3024
+UniProt IDs: P53350
+With confidence scores: 6148
+
+Confidence score distribution:
+  Score 8: 1988
+  Score 9: 4160

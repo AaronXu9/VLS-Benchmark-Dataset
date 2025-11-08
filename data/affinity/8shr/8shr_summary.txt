@@ -1,0 +1,12 @@
+PDB ID: 8shr
+Total activities: 538
+Unique molecules: 174
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 538
+ChEMBL targets: CHEMBL5891
+UniProt IDs: O60678
+With confidence scores: 538
+
+Confidence score distribution:
+  Score 8: 12
+  Score 9: 526

@@ -1,0 +1,11 @@
+PDB ID: 8b9u
+Total activities: 60
+Unique molecules: 15
+Activity types: Kd
+Entries with SMILES: 60
+ChEMBL targets: CHEMBL4630874
+UniProt IDs: P9WPC9
+With confidence scores: 60
+
+Confidence score distribution:
+  Score 8: 60

@@ -1,0 +1,12 @@
+PDB ID: 8hje
+Total activities: 1041
+Unique molecules: 322
+Activity types: IC50
+Entries with SMILES: 1041
+ChEMBL targets: CHEMBL2157853
+UniProt IDs: Q96RU2
+With confidence scores: 1041
+
+Confidence score distribution:
+  Score 8: 520
+  Score 9: 521

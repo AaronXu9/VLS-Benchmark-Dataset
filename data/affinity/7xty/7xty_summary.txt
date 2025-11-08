@@ -1,0 +1,12 @@
+PDB ID: 7xty
+Total activities: 228
+Unique molecules: 139
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 228
+ChEMBL targets: CHEMBL3233, CHEMBL2976
+UniProt IDs: P25054, Q12923
+With confidence scores: 228
+
+Confidence score distribution:
+  Score 8: 41
+  Score 9: 187

@@ -1,0 +1,11 @@
+PDB ID: 7pv6
+Total activities: 52
+Unique molecules: 49
+Activity types: IC50
+Entries with SMILES: 52
+ChEMBL targets: CHEMBL5538
+UniProt IDs: Q9WVG6
+With confidence scores: 52
+
+Confidence score distribution:
+  Score 9: 52

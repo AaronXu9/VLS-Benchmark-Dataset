@@ -1,0 +1,11 @@
+PDB ID: 7sps
+Total activities: 257
+Unique molecules: 222
+Activity types: IC50
+Entries with SMILES: 257
+ChEMBL targets: CHEMBL5215
+UniProt IDs: P11169
+With confidence scores: 257
+
+Confidence score distribution:
+  Score 9: 257

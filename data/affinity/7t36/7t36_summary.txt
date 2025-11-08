@@ -1,0 +1,12 @@
+PDB ID: 7t36
+Total activities: 733
+Unique molecules: 191
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 733
+ChEMBL targets: CHEMBL3217390
+UniProt IDs: P21675
+With confidence scores: 733
+
+Confidence score distribution:
+  Score 8: 11
+  Score 9: 722

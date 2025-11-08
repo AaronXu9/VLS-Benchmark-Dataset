@@ -1,0 +1,12 @@
+PDB ID: 8tdq
+Total activities: 48
+Unique molecules: 36
+Activity types: Kd
+Entries with SMILES: 48
+ChEMBL targets: CHEMBL1681615
+UniProt IDs: P9WPP7
+With confidence scores: 48
+
+Confidence score distribution:
+  Score 8: 3
+  Score 9: 45

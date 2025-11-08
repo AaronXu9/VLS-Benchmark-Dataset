@@ -1,0 +1,12 @@
+PDB ID: 8gi3
+Total activities: 71
+Unique molecules: 65
+Activity types: IC50, Kd
+Entries with SMILES: 71
+ChEMBL targets: CHEMBL6052
+UniProt IDs: P61586
+With confidence scores: 71
+
+Confidence score distribution:
+  Score 8: 14
+  Score 9: 57

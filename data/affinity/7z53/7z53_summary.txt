@@ -1,0 +1,12 @@
+PDB ID: 7z53
+Total activities: 2201
+Unique molecules: 732
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 2201
+ChEMBL targets: CHEMBL2439
+UniProt IDs: P05164
+With confidence scores: 2201
+
+Confidence score distribution:
+  Score 8: 121
+  Score 9: 2080

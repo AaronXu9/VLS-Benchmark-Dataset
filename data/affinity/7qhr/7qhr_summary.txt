@@ -1,0 +1,11 @@
+PDB ID: 7qhr
+Total activities: 84
+Unique molecules: 58
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 84
+ChEMBL targets: CHEMBL6091
+UniProt IDs: P61823
+With confidence scores: 84
+
+Confidence score distribution:
+  Score 9: 84

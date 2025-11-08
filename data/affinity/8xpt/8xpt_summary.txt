@@ -1,0 +1,12 @@
+PDB ID: 8xpt
+Total activities: 800
+Unique molecules: 243
+Activity types: IC50, Kd
+Entries with SMILES: 800
+ChEMBL targets: CHEMBL6031
+UniProt IDs: Q9H9B1
+With confidence scores: 800
+
+Confidence score distribution:
+  Score 8: 96
+  Score 9: 704

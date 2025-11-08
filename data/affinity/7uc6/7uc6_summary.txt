@@ -1,0 +1,12 @@
+PDB ID: 7uc6
+Total activities: 63
+Unique molecules: 57
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 63
+ChEMBL targets: CHEMBL5403
+UniProt IDs: P42229
+With confidence scores: 63
+
+Confidence score distribution:
+  Score 8: 4
+  Score 9: 59

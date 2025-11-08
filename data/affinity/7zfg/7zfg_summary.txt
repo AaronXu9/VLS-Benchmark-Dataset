@@ -1,0 +1,12 @@
+PDB ID: 7zfg
+Total activities: 246
+Unique molecules: 246
+Activity types: IC50, Kd
+Entries with SMILES: 246
+ChEMBL targets: CHEMBL1615387, CHEMBL3217399
+UniProt IDs: Q15788, Q9PTN2
+With confidence scores: 246
+
+Confidence score distribution:
+  Score 8: 241
+  Score 9: 5

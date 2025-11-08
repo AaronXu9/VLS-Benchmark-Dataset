@@ -1,0 +1,11 @@
+PDB ID: 8frc
+Total activities: 116
+Unique molecules: 93
+Activity types: IC50, Ki
+Entries with SMILES: 116
+ChEMBL targets: CHEMBL2052027
+UniProt IDs: Q91XA9
+With confidence scores: 116
+
+Confidence score distribution:
+  Score 9: 116

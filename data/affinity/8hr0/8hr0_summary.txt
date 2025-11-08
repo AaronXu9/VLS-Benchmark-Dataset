@@ -1,0 +1,11 @@
+PDB ID: 8hr0
+Total activities: 8
+Unique molecules: 2
+Activity types: Kd
+Entries with SMILES: 8
+ChEMBL targets: CHEMBL4295679, CHEMBL4295827
+UniProt IDs: O75396, Q15436
+With confidence scores: 8
+
+Confidence score distribution:
+  Score 9: 8

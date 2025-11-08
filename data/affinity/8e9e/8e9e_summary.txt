@@ -1,0 +1,12 @@
+PDB ID: 8e9e
+Total activities: 1728
+Unique molecules: 308
+Activity types: IC50
+Entries with SMILES: 1728
+ChEMBL targets: CHEMBL2095197
+UniProt IDs: Q02293, Q04631
+With confidence scores: 1728
+
+Confidence score distribution:
+  Score 6: 856
+  Score 7: 872

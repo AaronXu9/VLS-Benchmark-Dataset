@@ -1,0 +1,11 @@
+PDB ID: 7vrg
+Total activities: 5
+Unique molecules: 2
+Activity types: Kd, Ki
+Entries with SMILES: 5
+ChEMBL targets: CHEMBL4523313
+UniProt IDs: Q4AE59
+With confidence scores: 5
+
+Confidence score distribution:
+  Score 9: 5

@@ -1,0 +1,12 @@
+PDB ID: 7fyg
+Total activities: 1467
+Unique molecules: 695
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1466
+ChEMBL targets: CHEMBL2083
+UniProt IDs: P15090
+With confidence scores: 1467
+
+Confidence score distribution:
+  Score 8: 170
+  Score 9: 1297

@@ -1,0 +1,11 @@
+PDB ID: 8t5m
+Total activities: 20
+Unique molecules: 14
+Activity types: IC50, Kd
+Entries with SMILES: 20
+ChEMBL targets: CHEMBL4524041
+UniProt IDs: Q07890
+With confidence scores: 20
+
+Confidence score distribution:
+  Score 9: 20

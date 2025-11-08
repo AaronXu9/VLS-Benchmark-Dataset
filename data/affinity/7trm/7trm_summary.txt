@@ -1,0 +1,12 @@
+PDB ID: 7trm
+Total activities: 1567
+Unique molecules: 756
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1567
+ChEMBL targets: CHEMBL5462
+UniProt IDs: Q13490
+With confidence scores: 1567
+
+Confidence score distribution:
+  Score 8: 619
+  Score 9: 948

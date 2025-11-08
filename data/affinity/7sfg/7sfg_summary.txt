@@ -1,0 +1,12 @@
+PDB ID: 7sfg
+Total activities: 1064
+Unique molecules: 510
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1064
+ChEMBL targets: CHEMBL1993
+UniProt IDs: P26358
+With confidence scores: 1064
+
+Confidence score distribution:
+  Score 8: 204
+  Score 9: 860

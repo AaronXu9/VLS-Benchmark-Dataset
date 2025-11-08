@@ -1,0 +1,11 @@
+PDB ID: 8u2o
+Total activities: 65
+Unique molecules: 65
+Activity types: IC50
+Entries with SMILES: 65
+ChEMBL targets: CHEMBL4105812
+UniProt IDs: Q8IDW1
+With confidence scores: 65
+
+Confidence score distribution:
+  Score 8: 65

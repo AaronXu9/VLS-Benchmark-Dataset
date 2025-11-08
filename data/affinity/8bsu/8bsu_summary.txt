@@ -1,0 +1,12 @@
+PDB ID: 8bsu
+Total activities: 251
+Unique molecules: 143
+Activity types: IC50, Ki
+Entries with SMILES: 251
+ChEMBL targets: CHEMBL3744
+UniProt IDs: P42264
+With confidence scores: 251
+
+Confidence score distribution:
+  Score 8: 10
+  Score 9: 241

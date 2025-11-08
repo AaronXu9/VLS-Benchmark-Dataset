@@ -1,0 +1,12 @@
+PDB ID: 7xe3
+Total activities: 165
+Unique molecules: 133
+Activity types: IC50, Ki
+Entries with SMILES: 165
+ChEMBL targets: CHEMBL1938208
+UniProt IDs: Q8NB78
+With confidence scores: 165
+
+Confidence score distribution:
+  Score 8: 1
+  Score 9: 164

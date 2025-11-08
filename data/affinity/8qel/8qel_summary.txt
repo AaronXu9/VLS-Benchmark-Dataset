@@ -1,0 +1,12 @@
+PDB ID: 8qel
+Total activities: 421
+Unique molecules: 205
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 421
+ChEMBL targets: CHEMBL5785
+UniProt IDs: P19525
+With confidence scores: 421
+
+Confidence score distribution:
+  Score 8: 139
+  Score 9: 282

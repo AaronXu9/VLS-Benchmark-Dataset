@@ -1,0 +1,11 @@
+PDB ID: 8shj
+Total activities: 18
+Unique molecules: 18
+Activity types: Kd
+Entries with SMILES: 18
+ChEMBL targets: CHEMBL5465256
+UniProt IDs: A4D1P6
+With confidence scores: 18
+
+Confidence score distribution:
+  Score 9: 18

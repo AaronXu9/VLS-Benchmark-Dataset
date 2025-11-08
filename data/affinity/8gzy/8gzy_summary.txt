@@ -1,0 +1,12 @@
+PDB ID: 8gzy
+Total activities: 64
+Unique molecules: 47
+Activity types: IC50, Kd
+Entries with SMILES: 64
+ChEMBL targets: CHEMBL3999
+UniProt IDs: P0A9A6
+With confidence scores: 64
+
+Confidence score distribution:
+  Score 8: 58
+  Score 9: 6

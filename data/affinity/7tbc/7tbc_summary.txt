@@ -1,0 +1,11 @@
+PDB ID: 7tbc
+Total activities: 51
+Unique molecules: 43
+Activity types: IC50
+Entries with SMILES: 51
+ChEMBL targets: CHEMBL4523390
+UniProt IDs: Q8IAS0
+With confidence scores: 51
+
+Confidence score distribution:
+  Score 8: 51

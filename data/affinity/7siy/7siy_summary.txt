@@ -1,0 +1,12 @@
+PDB ID: 7siy
+Total activities: 909
+Unique molecules: 528
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 909
+ChEMBL targets: CHEMBL6066351, CHEMBL2803
+UniProt IDs: P22681, P43403
+With confidence scores: 909
+
+Confidence score distribution:
+  Score 8: 352
+  Score 9: 557

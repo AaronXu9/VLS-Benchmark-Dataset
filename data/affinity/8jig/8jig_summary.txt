@@ -1,0 +1,12 @@
+PDB ID: 8jig
+Total activities: 175
+Unique molecules: 129
+Activity types: IC50, Kd
+Entries with SMILES: 175
+ChEMBL targets: CHEMBL2424510
+UniProt IDs: Q96T88
+With confidence scores: 175
+
+Confidence score distribution:
+  Score 8: 46
+  Score 9: 129

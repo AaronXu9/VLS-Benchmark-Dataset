@@ -1,0 +1,12 @@
+PDB ID: 8eyb
+Total activities: 89805
+Unique molecules: 20314
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 89359
+ChEMBL targets: CHEMBL2971, CHEMBL335
+UniProt IDs: O60674, P18031
+With confidence scores: 89805
+
+Confidence score distribution:
+  Score 8: 14148
+  Score 9: 75657

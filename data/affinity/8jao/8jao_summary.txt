@@ -1,0 +1,11 @@
+PDB ID: 8jao
+Total activities: 920
+Unique molecules: 522
+Activity types: IC50, Ki
+Entries with SMILES: 910
+ChEMBL targets: CHEMBL1293244
+UniProt IDs: Q79MP6
+With confidence scores: 920
+
+Confidence score distribution:
+  Score 9: 920

@@ -1,0 +1,12 @@
+PDB ID: 7wcl
+Total activities: 28030
+Unique molecules: 6331
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 28028
+ChEMBL targets: CHEMBL3650
+UniProt IDs: P11362
+With confidence scores: 28030
+
+Confidence score distribution:
+  Score 8: 3191
+  Score 9: 24839

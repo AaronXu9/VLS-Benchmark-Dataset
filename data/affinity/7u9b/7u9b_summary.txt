@@ -1,0 +1,11 @@
+PDB ID: 7u9b
+Total activities: 30
+Unique molecules: 16
+Activity types: IC50, Ki
+Entries with SMILES: 30
+ChEMBL targets: CHEMBL6132
+UniProt IDs: Q9F663
+With confidence scores: 30
+
+Confidence score distribution:
+  Score 9: 30

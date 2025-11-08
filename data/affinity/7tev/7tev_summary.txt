@@ -1,0 +1,11 @@
+PDB ID: 7tev
+Total activities: 3
+Unique molecules: 3
+Activity types: Ki
+Entries with SMILES: 3
+ChEMBL targets: CHEMBL5954
+UniProt IDs: P04181
+With confidence scores: 3
+
+Confidence score distribution:
+  Score 9: 3

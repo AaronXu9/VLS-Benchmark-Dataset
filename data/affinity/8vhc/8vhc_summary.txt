@@ -1,0 +1,12 @@
+PDB ID: 8vhc
+Total activities: 78119
+Unique molecules: 5167
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 78119
+ChEMBL targets: CHEMBL2007625
+UniProt IDs: O75874
+With confidence scores: 78119
+
+Confidence score distribution:
+  Score 8: 55554
+  Score 9: 22565

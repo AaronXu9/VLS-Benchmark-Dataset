@@ -1,0 +1,12 @@
+PDB ID: 8hun
+Total activities: 3015
+Unique molecules: 1229
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 3015
+ChEMBL targets: CHEMBL239
+UniProt IDs: Q07869
+With confidence scores: 3015
+
+Confidence score distribution:
+  Score 8: 1008
+  Score 9: 2007

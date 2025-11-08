@@ -1,0 +1,12 @@
+PDB ID: 8svm
+Total activities: 850
+Unique molecules: 844
+Activity types: IC50, Ki
+Entries with SMILES: 850
+ChEMBL targets: CHEMBL1293313
+UniProt IDs: Q8IL11
+With confidence scores: 850
+
+Confidence score distribution:
+  Score 8: 22
+  Score 9: 828

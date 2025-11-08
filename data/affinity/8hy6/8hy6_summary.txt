@@ -1,0 +1,11 @@
+PDB ID: 8hy6
+Total activities: 141
+Unique molecules: 34
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 141
+ChEMBL targets: CHEMBL1667695
+UniProt IDs: C7C422
+With confidence scores: 141
+
+Confidence score distribution:
+  Score 9: 141

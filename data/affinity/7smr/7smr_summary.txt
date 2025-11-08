@@ -1,0 +1,13 @@
+PDB ID: 7smr
+Total activities: 441
+Unique molecules: 58
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 441
+ChEMBL targets: CHEMBL3097, CHEMBL2096975, CHEMBL3916
+UniProt IDs: P02710, P02712, P02714, P02718
+With confidence scores: 441
+
+Confidence score distribution:
+  Score 6: 200
+  Score 7: 96
+  Score 8: 145

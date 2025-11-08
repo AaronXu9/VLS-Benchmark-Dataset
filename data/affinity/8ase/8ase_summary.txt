@@ -1,0 +1,12 @@
+PDB ID: 8ase
+Total activities: 14104
+Unique molecules: 8158
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 14103
+ChEMBL targets: CHEMBL204
+UniProt IDs: P00734
+With confidence scores: 14104
+
+Confidence score distribution:
+  Score 8: 7593
+  Score 9: 6511

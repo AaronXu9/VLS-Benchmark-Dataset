@@ -1,0 +1,11 @@
+PDB ID: 7zoc
+Total activities: 13
+Unique molecules: 10
+Activity types: IC50, Ki
+Entries with SMILES: 13
+ChEMBL targets: CHEMBL4630869
+UniProt IDs: Q46085
+With confidence scores: 13
+
+Confidence score distribution:
+  Score 9: 13

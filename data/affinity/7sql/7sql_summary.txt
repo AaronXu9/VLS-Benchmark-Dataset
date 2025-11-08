@@ -1,0 +1,11 @@
+PDB ID: 7sql
+Total activities: 68
+Unique molecules: 14
+Activity types: IC50, Ki
+Entries with SMILES: 68
+ChEMBL targets: CHEMBL2469
+UniProt IDs: Q9BZX2
+With confidence scores: 68
+
+Confidence score distribution:
+  Score 9: 68

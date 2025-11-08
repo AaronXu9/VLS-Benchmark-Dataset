@@ -1,0 +1,11 @@
+PDB ID: 8tlv
+Total activities: 263
+Unique molecules: 68
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 263
+ChEMBL targets: CHEMBL4295761
+UniProt IDs: P42568
+With confidence scores: 263
+
+Confidence score distribution:
+  Score 9: 263

@@ -1,0 +1,12 @@
+PDB ID: 8jot
+Total activities: 13364
+Unique molecules: 3787
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 13362
+ChEMBL targets: CHEMBL1844
+UniProt IDs: P07333
+With confidence scores: 13364
+
+Confidence score distribution:
+  Score 8: 5724
+  Score 9: 7640

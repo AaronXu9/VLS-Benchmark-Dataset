@@ -1,0 +1,12 @@
+PDB ID: 8tpy
+Total activities: 334
+Unique molecules: 245
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 309
+ChEMBL targets: CHEMBL2360
+UniProt IDs: P00492
+With confidence scores: 334
+
+Confidence score distribution:
+  Score 8: 60
+  Score 9: 274

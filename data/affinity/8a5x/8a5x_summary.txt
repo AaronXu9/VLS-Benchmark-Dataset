@@ -1,0 +1,11 @@
+PDB ID: 8a5x
+Total activities: 170
+Unique molecules: 24
+Activity types: IC50, Kd
+Entries with SMILES: 170
+ChEMBL targets: CHEMBL5206, CHEMBL3220
+UniProt IDs: P00720, Q8TCG2
+With confidence scores: 170
+
+Confidence score distribution:
+  Score 9: 170

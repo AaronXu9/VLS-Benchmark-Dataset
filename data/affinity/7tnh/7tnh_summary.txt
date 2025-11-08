@@ -1,0 +1,12 @@
+PDB ID: 7tnh
+Total activities: 46152
+Unique molecules: 9073
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 46148
+ChEMBL targets: CHEMBL1844, CHEMBL3650
+UniProt IDs: P07333, P11362
+With confidence scores: 46152
+
+Confidence score distribution:
+  Score 8: 11965
+  Score 9: 34187

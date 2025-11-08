@@ -1,0 +1,12 @@
+PDB ID: 8gwh
+Total activities: 18637
+Unique molecules: 6111
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 18634
+ChEMBL targets: CHEMBL267, CHEMBL4060
+UniProt IDs: P12931, Q16825
+With confidence scores: 18637
+
+Confidence score distribution:
+  Score 8: 10518
+  Score 9: 8119

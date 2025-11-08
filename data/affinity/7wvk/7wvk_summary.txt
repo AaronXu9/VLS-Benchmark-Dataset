@@ -1,0 +1,12 @@
+PDB ID: 7wvk
+Total activities: 3136
+Unique molecules: 2101
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 3133
+ChEMBL targets: CHEMBL1075317
+UniProt IDs: P61964
+With confidence scores: 3136
+
+Confidence score distribution:
+  Score 8: 1865
+  Score 9: 1271

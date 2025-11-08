@@ -1,0 +1,12 @@
+PDB ID: 7vze
+Total activities: 9
+Unique molecules: 9
+Activity types: IC50
+Entries with SMILES: 9
+ChEMBL targets: CHEMBL2010633, CHEMBL3165
+UniProt IDs: P03126, P29074
+With confidence scores: 9
+
+Confidence score distribution:
+  Score 8: 2
+  Score 9: 7

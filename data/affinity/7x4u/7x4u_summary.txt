@@ -1,0 +1,12 @@
+PDB ID: 7x4u
+Total activities: 20644
+Unique molecules: 7799
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 20498
+ChEMBL targets: CHEMBL4040
+UniProt IDs: P28482
+With confidence scores: 20644
+
+Confidence score distribution:
+  Score 8: 7400
+  Score 9: 13244

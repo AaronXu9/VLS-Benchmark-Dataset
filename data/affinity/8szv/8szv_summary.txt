@@ -1,0 +1,12 @@
+PDB ID: 8szv
+Total activities: 1369
+Unique molecules: 288
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1369
+ChEMBL targets: CHEMBL3401
+UniProt IDs: O75469
+With confidence scores: 1369
+
+Confidence score distribution:
+  Score 8: 13
+  Score 9: 1356

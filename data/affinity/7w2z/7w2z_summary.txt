@@ -1,0 +1,13 @@
+PDB ID: 7w2z
+Total activities: 4840
+Unique molecules: 1648
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 4840
+ChEMBL targets: CHEMBL3883319, CHEMBL3721304, CHEMBL4616, CHEMBL1921664
+UniProt IDs: P59768, P62873, Q92847, Q9UBU3
+With confidence scores: 4840
+
+Confidence score distribution:
+  Score 7: 150
+  Score 8: 391
+  Score 9: 4299

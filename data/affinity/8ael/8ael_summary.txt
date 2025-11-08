@@ -1,0 +1,11 @@
+PDB ID: 8ael
+Total activities: 1
+Unique molecules: 1
+Activity types: IC50
+Entries with SMILES: 1
+ChEMBL targets: CHEMBL1764938
+UniProt IDs: P07355
+With confidence scores: 1
+
+Confidence score distribution:
+  Score 9: 1

@@ -1,0 +1,12 @@
+PDB ID: 7pvu
+Total activities: 249
+Unique molecules: 231
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 249
+ChEMBL targets: CHEMBL2336
+UniProt IDs: P47811
+With confidence scores: 249
+
+Confidence score distribution:
+  Score 8: 101
+  Score 9: 148

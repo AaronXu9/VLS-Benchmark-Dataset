@@ -1,0 +1,11 @@
+PDB ID: 7wj8
+Total activities: 45
+Unique molecules: 42
+Activity types: IC50, Ki
+Entries with SMILES: 45
+ChEMBL targets: CHEMBL2242740
+UniProt IDs: P93836
+With confidence scores: 45
+
+Confidence score distribution:
+  Score 9: 45

@@ -1,0 +1,12 @@
+PDB ID: 8df5
+Total activities: 563
+Unique molecules: 193
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 563
+ChEMBL targets: CHEMBL4662936, CHEMBL3736
+UniProt IDs: P0DTC2, Q9BYF1
+With confidence scores: 563
+
+Confidence score distribution:
+  Score 8: 47
+  Score 9: 516

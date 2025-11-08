@@ -1,0 +1,12 @@
+PDB ID: 8cqy
+Total activities: 6718
+Unique molecules: 3022
+Activity types: IC50, Ki
+Entries with SMILES: 6718
+ChEMBL targets: CHEMBL2396509, CHEMBL3706
+UniProt IDs: P26045, P78536
+With confidence scores: 6718
+
+Confidence score distribution:
+  Score 8: 2554
+  Score 9: 4164

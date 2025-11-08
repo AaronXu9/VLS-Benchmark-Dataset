@@ -1,0 +1,12 @@
+PDB ID: 8swe
+Total activities: 12816
+Unique molecules: 3000
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 12814
+ChEMBL targets: CHEMBL4142
+UniProt IDs: P21802
+With confidence scores: 12816
+
+Confidence score distribution:
+  Score 8: 326
+  Score 9: 12490

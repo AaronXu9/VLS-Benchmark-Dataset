@@ -1,0 +1,12 @@
+PDB ID: 8swz
+Total activities: 120
+Unique molecules: 51
+Activity types: IC50, Kd
+Entries with SMILES: 120
+ChEMBL targets: CHEMBL6142
+UniProt IDs: Q9UKK3
+With confidence scores: 120
+
+Confidence score distribution:
+  Score 8: 2
+  Score 9: 118

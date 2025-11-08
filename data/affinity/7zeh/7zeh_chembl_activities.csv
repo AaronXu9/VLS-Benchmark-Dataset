@@ -1,0 +1,5 @@
+molecule_chembl_id,canonical_smiles,standard_type,standard_value,standard_units,pchembl_value,activity_comment,assay_chembl_id,confidence_score,target_chembl_id,document_chembl_id,source_pdb_id,source_uniprot_id
+CHEMBL4203412,C[n+]1cn([C@@H]2O[C@H](Cn3cc(P(=O)([O-])O)nn3)[C@@H](O)[C@H]2O)c2nc(N)[nH]c(=O)c21,IC50,128000.0,nM,,,CHEMBL4182506,9,CHEMBL4295921,CHEMBL4177717,7zeh,Q969T7
+CHEMBL4203412,C[n+]1cn([C@@H]2O[C@H](Cn3cc(P(=O)([O-])O)nn3)[C@@H](O)[C@H]2O)c2nc(N)[nH]c(=O)c21,IC50,128000.0,nM,,,CHEMBL4182506,9,CHEMBL4295921,CHEMBL4177717,7zeh,Q969T7
+CHEMBL4203412,C[n+]1cn([C@@H]2O[C@H](Cn3cc(P(=O)([O-])O)nn3)[C@@H](O)[C@H]2O)c2nc(N)[nH]c(=O)c21,IC50,87800.0,nM,4.06,,CHEMBL4182507,9,CHEMBL4295921,CHEMBL4177717,7zeh,Q969T7
+CHEMBL4203412,C[n+]1cn([C@@H]2O[C@H](Cn3cc(P(=O)([O-])O)nn3)[C@@H](O)[C@H]2O)c2nc(N)[nH]c(=O)c21,IC50,87800.0,nM,4.06,,CHEMBL4182507,9,CHEMBL4295921,CHEMBL4177717,7zeh,Q969T7

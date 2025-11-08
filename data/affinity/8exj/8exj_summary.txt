@@ -1,0 +1,12 @@
+PDB ID: 8exj
+Total activities: 76450
+Unique molecules: 17479
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 75997
+ChEMBL targets: CHEMBL335, CHEMBL2835
+UniProt IDs: P18031, P23458
+With confidence scores: 76450
+
+Confidence score distribution:
+  Score 8: 13359
+  Score 9: 63091

@@ -1,0 +1,11 @@
+PDB ID: 8p11
+Total activities: 395
+Unique molecules: 172
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 395
+ChEMBL targets: CHEMBL6084
+UniProt IDs: P58154
+With confidence scores: 395
+
+Confidence score distribution:
+  Score 9: 395

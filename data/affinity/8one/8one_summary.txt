@@ -1,0 +1,11 @@
+PDB ID: 8one
+Total activities: 6
+Unique molecules: 6
+Activity types: IC50
+Entries with SMILES: 6
+ChEMBL targets: CHEMBL5465277
+UniProt IDs: O60568
+With confidence scores: 6
+
+Confidence score distribution:
+  Score 9: 6

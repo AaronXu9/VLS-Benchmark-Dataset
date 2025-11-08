@@ -1,0 +1,14 @@
+PDB ID: 8bhg
+Total activities: 1734
+Unique molecules: 1042
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1734
+ChEMBL targets: CHEMBL2093872, CHEMBL5112
+UniProt IDs: P18507, P31644
+With confidence scores: 1734
+
+Confidence score distribution:
+  Score 4: 851
+  Score 5: 272
+  Score 8: 83
+  Score 9: 528

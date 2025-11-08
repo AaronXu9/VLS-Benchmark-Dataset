@@ -1,0 +1,12 @@
+PDB ID: 7vto
+Total activities: 2159
+Unique molecules: 1196
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 2159
+ChEMBL targets: CHEMBL4600
+UniProt IDs: Q13153
+With confidence scores: 2159
+
+Confidence score distribution:
+  Score 8: 1038
+  Score 9: 1121

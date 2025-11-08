@@ -1,0 +1,12 @@
+PDB ID: 8yhw
+Total activities: 3000
+Unique molecules: 1480
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 3000
+ChEMBL targets: CHEMBL5888
+UniProt IDs: Q99558
+With confidence scores: 3000
+
+Confidence score distribution:
+  Score 8: 1378
+  Score 9: 1622

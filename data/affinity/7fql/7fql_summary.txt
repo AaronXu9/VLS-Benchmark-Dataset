@@ -1,0 +1,12 @@
+PDB ID: 7fql
+Total activities: 330
+Unique molecules: 206
+Activity types: IC50, Ki
+Entries with SMILES: 330
+ChEMBL targets: CHEMBL4244
+UniProt IDs: Q99538
+With confidence scores: 330
+
+Confidence score distribution:
+  Score 8: 13
+  Score 9: 317

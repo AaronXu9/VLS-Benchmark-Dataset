@@ -1,0 +1,12 @@
+PDB ID: 7qql
+Total activities: 1929
+Unique molecules: 479
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1928
+ChEMBL targets: CHEMBL1764938, CHEMBL2553
+UniProt IDs: P07355, Q15418
+With confidence scores: 1929
+
+Confidence score distribution:
+  Score 8: 780
+  Score 9: 1149

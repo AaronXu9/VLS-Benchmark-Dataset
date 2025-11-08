@@ -1,0 +1,12 @@
+PDB ID: 8azn
+Total activities: 20933
+Unique molecules: 4105
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 20913
+ChEMBL targets: CHEMBL4523582
+UniProt IDs: P0DTD1
+With confidence scores: 20933
+
+Confidence score distribution:
+  Score 8: 73
+  Score 9: 20860

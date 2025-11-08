@@ -1,0 +1,11 @@
+PDB ID: 7t79
+Total activities: 136
+Unique molecules: 124
+Activity types: IC50, Kd
+Entries with SMILES: 136
+ChEMBL targets: CHEMBL3820
+UniProt IDs: P35557
+With confidence scores: 136
+
+Confidence score distribution:
+  Score 9: 136

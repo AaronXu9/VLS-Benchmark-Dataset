@@ -1,0 +1,11 @@
+PDB ID: 7up2
+Total activities: 3
+Unique molecules: 3
+Activity types: IC50
+Entries with SMILES: 3
+ChEMBL targets: CHEMBL1287601
+UniProt IDs: Q9XAY4
+With confidence scores: 3
+
+Confidence score distribution:
+  Score 9: 3

@@ -1,0 +1,12 @@
+PDB ID: 8gmc
+Total activities: 12367
+Unique molecules: 1201
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 12366
+ChEMBL targets: CHEMBL3830
+UniProt IDs: Q2M2I8
+With confidence scores: 12367
+
+Confidence score distribution:
+  Score 8: 262
+  Score 9: 12105

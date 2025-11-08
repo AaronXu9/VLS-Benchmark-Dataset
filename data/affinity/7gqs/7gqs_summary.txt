@@ -1,0 +1,11 @@
+PDB ID: 7gqs
+Total activities: 75
+Unique molecules: 48
+Activity types: IC50
+Entries with SMILES: 75
+ChEMBL targets: CHEMBL2146312
+UniProt IDs: Q14191
+With confidence scores: 75
+
+Confidence score distribution:
+  Score 9: 75

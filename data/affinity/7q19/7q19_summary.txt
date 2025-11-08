@@ -1,0 +1,11 @@
+PDB ID: 7q19
+Total activities: 2
+Unique molecules: 2
+Activity types: Kd
+Entries with SMILES: 2
+ChEMBL targets: CHEMBL1075053
+UniProt IDs: P02754
+With confidence scores: 2
+
+Confidence score distribution:
+  Score 9: 2

@@ -1,0 +1,11 @@
+PDB ID: 7z3l
+Total activities: 194
+Unique molecules: 47
+Activity types: IC50, Ki
+Entries with SMILES: 194
+ChEMBL targets: CHEMBL3826870
+UniProt IDs: Q64610
+With confidence scores: 194
+
+Confidence score distribution:
+  Score 9: 194

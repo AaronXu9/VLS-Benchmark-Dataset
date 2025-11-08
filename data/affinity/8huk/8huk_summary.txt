@@ -1,0 +1,12 @@
+PDB ID: 8huk
+Total activities: 3256
+Unique molecules: 1470
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 3256
+ChEMBL targets: CHEMBL239, CHEMBL1615387
+UniProt IDs: Q07869, Q15788
+With confidence scores: 3256
+
+Confidence score distribution:
+  Score 8: 1249
+  Score 9: 2007

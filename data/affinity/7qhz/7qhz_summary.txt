@@ -1,0 +1,11 @@
+PDB ID: 7qhz
+Total activities: 162
+Unique molecules: 72
+Activity types: IC50, Ki
+Entries with SMILES: 162
+ChEMBL targets: CHEMBL4448
+UniProt IDs: Q92876
+With confidence scores: 162
+
+Confidence score distribution:
+  Score 9: 162

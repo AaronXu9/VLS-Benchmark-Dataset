@@ -1,0 +1,12 @@
+PDB ID: 8tbg
+Total activities: 2380
+Unique molecules: 557
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 2380
+ChEMBL targets: CHEMBL2167, CHEMBL1949
+UniProt IDs: P01112, P62937
+With confidence scores: 2380
+
+Confidence score distribution:
+  Score 8: 790
+  Score 9: 1590

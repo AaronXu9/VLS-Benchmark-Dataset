@@ -1,0 +1,11 @@
+PDB ID: 8tbx
+Total activities: 249
+Unique molecules: 246
+Activity types: IC50, Kd
+Entries with SMILES: 248
+ChEMBL targets: CHEMBL2010634
+UniProt IDs: Q92499
+With confidence scores: 249
+
+Confidence score distribution:
+  Score 9: 249

@@ -1,0 +1,12 @@
+PDB ID: 7ytx
+Total activities: 20781
+Unique molecules: 3591
+Activity types: IC50, Kd
+Entries with SMILES: 20774
+ChEMBL targets: CHEMBL5805
+UniProt IDs: Q9NR97
+With confidence scores: 20781
+
+Confidence score distribution:
+  Score 8: 2046
+  Score 9: 18735

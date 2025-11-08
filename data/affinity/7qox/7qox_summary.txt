@@ -1,0 +1,12 @@
+PDB ID: 7qox
+Total activities: 39778
+Unique molecules: 4387
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 39763
+ChEMBL targets: CHEMBL2000
+UniProt IDs: P03952
+With confidence scores: 39778
+
+Confidence score distribution:
+  Score 8: 7170
+  Score 9: 32608

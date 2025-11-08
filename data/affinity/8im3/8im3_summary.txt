@@ -1,0 +1,11 @@
+PDB ID: 8im3
+Total activities: 113
+Unique molecules: 113
+Activity types: IC50, Ki
+Entries with SMILES: 113
+ChEMBL targets: CHEMBL1861
+UniProt IDs: P32754
+With confidence scores: 113
+
+Confidence score distribution:
+  Score 9: 113

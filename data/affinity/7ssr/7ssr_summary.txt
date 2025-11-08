@@ -1,0 +1,11 @@
+PDB ID: 7ssr
+Total activities: 10
+Unique molecules: 7
+Activity types: Kd
+Entries with SMILES: 10
+ChEMBL targets: CHEMBL4105829
+UniProt IDs: Q05320
+With confidence scores: 10
+
+Confidence score distribution:
+  Score 9: 10

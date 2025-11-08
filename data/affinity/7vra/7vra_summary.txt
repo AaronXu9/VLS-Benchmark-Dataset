@@ -1,0 +1,12 @@
+PDB ID: 7vra
+Total activities: 413459
+Unique molecules: 15513
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 413303
+ChEMBL targets: CHEMBL203
+UniProt IDs: P00533
+With confidence scores: 413459
+
+Confidence score distribution:
+  Score 8: 74940
+  Score 9: 338519

@@ -1,0 +1,11 @@
+PDB ID: 8co3
+Total activities: 87751
+Unique molecules: 5070
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 87746
+ChEMBL targets: CHEMBL3242
+UniProt IDs: O43570
+With confidence scores: 87751
+
+Confidence score distribution:
+  Score 9: 87751

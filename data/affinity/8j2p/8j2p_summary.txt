@@ -1,0 +1,11 @@
+PDB ID: 8j2p
+Total activities: 1
+Unique molecules: 1
+Activity types: IC50
+Entries with SMILES: 1
+ChEMBL targets: CHEMBL6067625
+UniProt IDs: P29590
+With confidence scores: 1
+
+Confidence score distribution:
+  Score 9: 1

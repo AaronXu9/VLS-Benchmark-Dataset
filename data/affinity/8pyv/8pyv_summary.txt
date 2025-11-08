@@ -1,0 +1,12 @@
+PDB ID: 8pyv
+Total activities: 6608
+Unique molecules: 2014
+Activity types: IC50, Ki
+Entries with SMILES: 6608
+ChEMBL targets: CHEMBL5658
+UniProt IDs: O14684
+With confidence scores: 6608
+
+Confidence score distribution:
+  Score 8: 833
+  Score 9: 5775

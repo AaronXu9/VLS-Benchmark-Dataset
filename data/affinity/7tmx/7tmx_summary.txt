@@ -1,0 +1,11 @@
+PDB ID: 7tmx
+Total activities: 6
+Unique molecules: 6
+Activity types: IC50
+Entries with SMILES: 6
+ChEMBL targets: CHEMBL4523426
+UniProt IDs: Q96FI4
+With confidence scores: 6
+
+Confidence score distribution:
+  Score 9: 6

@@ -1,0 +1,11 @@
+PDB ID: 8bzs
+Total activities: 2474
+Unique molecules: 680
+Activity types: IC50, Ki
+Entries with SMILES: 2474
+ChEMBL targets: CHEMBL4696
+UniProt IDs: P00489
+With confidence scores: 2474
+
+Confidence score distribution:
+  Score 9: 2474

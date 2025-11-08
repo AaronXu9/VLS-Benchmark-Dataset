@@ -1,0 +1,11 @@
+PDB ID: 7szb
+Total activities: 255
+Unique molecules: 246
+Activity types: IC50, Kd
+Entries with SMILES: 254
+ChEMBL targets: CHEMBL1938223, CHEMBL6066493
+UniProt IDs: Q96S44, Q9Y3C4
+With confidence scores: 255
+
+Confidence score distribution:
+  Score 9: 255

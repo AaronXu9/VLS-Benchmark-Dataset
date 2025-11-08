@@ -1,0 +1,12 @@
+PDB ID: 7pux
+Total activities: 1524
+Unique molecules: 800
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1524
+ChEMBL targets: CHEMBL1075145
+UniProt IDs: P55072
+With confidence scores: 1524
+
+Confidence score distribution:
+  Score 8: 334
+  Score 9: 1190

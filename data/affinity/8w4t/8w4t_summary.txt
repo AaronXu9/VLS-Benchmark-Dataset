@@ -1,0 +1,12 @@
+PDB ID: 8w4t
+Total activities: 12577
+Unique molecules: 3319
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 12433
+ChEMBL targets: CHEMBL1827
+UniProt IDs: O76074
+With confidence scores: 12577
+
+Confidence score distribution:
+  Score 8: 3262
+  Score 9: 9315

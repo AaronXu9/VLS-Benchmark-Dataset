@@ -1,0 +1,11 @@
+PDB ID: 7tux
+Total activities: 30
+Unique molecules: 30
+Activity types: Ki
+Entries with SMILES: 5
+ChEMBL targets: CHEMBL3988608
+UniProt IDs: P20035
+With confidence scores: 30
+
+Confidence score distribution:
+  Score 8: 30

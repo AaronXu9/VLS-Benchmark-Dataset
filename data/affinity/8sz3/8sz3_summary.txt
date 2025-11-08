@@ -1,0 +1,11 @@
+PDB ID: 8sz3
+Total activities: 42
+Unique molecules: 42
+Activity types: IC50
+Entries with SMILES: 42
+ChEMBL targets: CHEMBL5465363
+UniProt IDs: Q9NY97
+With confidence scores: 42
+
+Confidence score distribution:
+  Score 9: 42

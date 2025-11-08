@@ -1,0 +1,11 @@
+PDB ID: 8pai
+Total activities: 64
+Unique molecules: 29
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 64
+ChEMBL targets: CHEMBL5878
+UniProt IDs: P49773
+With confidence scores: 64
+
+Confidence score distribution:
+  Score 9: 64

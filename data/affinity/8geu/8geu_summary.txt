@@ -1,0 +1,11 @@
+PDB ID: 8geu
+Total activities: 7
+Unique molecules: 7
+Activity types: Ki
+Entries with SMILES: 7
+ChEMBL targets: CHEMBL2076
+UniProt IDs: P09455
+With confidence scores: 7
+
+Confidence score distribution:
+  Score 9: 7

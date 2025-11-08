@@ -1,0 +1,12 @@
+PDB ID: 7sus
+Total activities: 598
+Unique molecules: 404
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 598
+ChEMBL targets: CHEMBL1628481
+UniProt IDs: P35414
+With confidence scores: 598
+
+Confidence score distribution:
+  Score 8: 94
+  Score 9: 504

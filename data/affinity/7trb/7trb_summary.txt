@@ -1,0 +1,12 @@
+PDB ID: 7trb
+Total activities: 1196
+Unique molecules: 717
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 1195
+ChEMBL targets: CHEMBL1615387, CHEMBL2047
+UniProt IDs: Q15788, Q96RI1
+With confidence scores: 1196
+
+Confidence score distribution:
+  Score 8: 298
+  Score 9: 898

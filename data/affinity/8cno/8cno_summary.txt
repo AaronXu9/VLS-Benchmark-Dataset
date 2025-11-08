@@ -1,0 +1,12 @@
+PDB ID: 8cno
+Total activities: 347
+Unique molecules: 114
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 347
+ChEMBL targets: CHEMBL2163182
+UniProt IDs: Q8N6T7
+With confidence scores: 347
+
+Confidence score distribution:
+  Score 8: 4
+  Score 9: 343

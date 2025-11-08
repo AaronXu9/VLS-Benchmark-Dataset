@@ -1,0 +1,12 @@
+PDB ID: 8tqg
+Total activities: 1320
+Unique molecules: 396
+Activity types: IC50
+Entries with SMILES: 1320
+ChEMBL targets: CHEMBL4105939
+UniProt IDs: I6X8D2
+With confidence scores: 1320
+
+Confidence score distribution:
+  Score 8: 1313
+  Score 9: 7

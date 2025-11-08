@@ -1,0 +1,11 @@
+PDB ID: 8rhl
+Total activities: 137
+Unique molecules: 44
+Activity types: IC50, Ki
+Entries with SMILES: 137
+ChEMBL targets: CHEMBL4206, CHEMBL4904, CHEMBL4295577, CHEMBL4659, CHEMBL4295578
+UniProt IDs: P22141, P30656, P23724, P25043, P38624
+With confidence scores: 137
+
+Confidence score distribution:
+  Score 8: 137

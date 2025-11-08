@@ -1,0 +1,11 @@
+PDB ID: 8p5y
+Total activities: 3
+Unique molecules: 3
+Activity types: Kd
+Entries with SMILES: 3
+ChEMBL targets: CHEMBL1075026
+UniProt IDs: P22629
+With confidence scores: 3
+
+Confidence score distribution:
+  Score 9: 3

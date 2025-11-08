@@ -1,0 +1,11 @@
+PDB ID: 8ejm
+Total activities: 7
+Unique molecules: 4
+Activity types: IC50, Kd
+Entries with SMILES: 7
+ChEMBL targets: CHEMBL4295661
+UniProt IDs: O43143
+With confidence scores: 7
+
+Confidence score distribution:
+  Score 9: 7

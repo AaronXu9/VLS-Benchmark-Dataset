@@ -1,0 +1,12 @@
+PDB ID: 7y0f
+Total activities: 54
+Unique molecules: 45
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 54
+ChEMBL targets: CHEMBL1795140
+UniProt IDs: O15393
+With confidence scores: 54
+
+Confidence score distribution:
+  Score 8: 3
+  Score 9: 51

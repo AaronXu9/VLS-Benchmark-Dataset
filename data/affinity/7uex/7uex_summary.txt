@@ -1,0 +1,11 @@
+PDB ID: 7uex
+Total activities: 117
+Unique molecules: 108
+Activity types: IC50
+Entries with SMILES: 117
+ChEMBL targets: CHEMBL3407328
+UniProt IDs: Q9H999
+With confidence scores: 117
+
+Confidence score distribution:
+  Score 9: 117

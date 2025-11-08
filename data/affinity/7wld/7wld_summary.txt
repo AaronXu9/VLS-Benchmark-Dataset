@@ -1,0 +1,11 @@
+PDB ID: 7wld
+Total activities: 25
+Unique molecules: 2
+Activity types: Kd
+Entries with SMILES: 25
+ChEMBL targets: CHEMBL6067041, CHEMBL6067192, CHEMBL6067339, CHEMBL6067379
+UniProt IDs: O43292, Q92643, Q969N2, Q96S52
+With confidence scores: 25
+
+Confidence score distribution:
+  Score 9: 25

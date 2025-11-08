@@ -1,0 +1,12 @@
+PDB ID: 5sdb
+Total activities: 16424
+Unique molecules: 1514
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 16422
+ChEMBL targets: CHEMBL202
+UniProt IDs: P00374
+With confidence scores: 16424
+
+Confidence score distribution:
+  Score 8: 6877
+  Score 9: 9547

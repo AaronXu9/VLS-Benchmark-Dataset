@@ -1,0 +1,12 @@
+PDB ID: 7qjg
+Total activities: 13402
+Unique molecules: 1966
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 13134
+ChEMBL targets: CHEMBL2189117, CHEMBL2189110
+UniProt IDs: O75530, Q15910
+With confidence scores: 13402
+
+Confidence score distribution:
+  Score 8: 5600
+  Score 9: 7802

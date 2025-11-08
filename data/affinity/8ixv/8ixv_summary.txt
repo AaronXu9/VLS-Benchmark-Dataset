@@ -1,0 +1,11 @@
+PDB ID: 8ixv
+Total activities: 328
+Unique molecules: 16
+Activity types: IC50, Kd
+Entries with SMILES: 328
+ChEMBL targets: CHEMBL4105758
+UniProt IDs: O00481
+With confidence scores: 328
+
+Confidence score distribution:
+  Score 9: 328

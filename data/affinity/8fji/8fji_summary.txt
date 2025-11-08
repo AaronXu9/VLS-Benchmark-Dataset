@@ -1,0 +1,11 @@
+PDB ID: 8fji
+Total activities: 1
+Unique molecules: 1
+Activity types: Kd
+Entries with SMILES: 1
+ChEMBL targets: CHEMBL3879855
+UniProt IDs: P11233
+With confidence scores: 1
+
+Confidence score distribution:
+  Score 9: 1

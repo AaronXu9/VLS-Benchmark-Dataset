@@ -1,0 +1,11 @@
+PDB ID: 7yva
+Total activities: 24
+Unique molecules: 7
+Activity types: IC50, Ki
+Entries with SMILES: 24
+ChEMBL targets: CHEMBL1287619
+UniProt IDs: Q9URB4
+With confidence scores: 24
+
+Confidence score distribution:
+  Score 8: 24

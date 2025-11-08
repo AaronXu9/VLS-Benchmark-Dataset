@@ -1,0 +1,12 @@
+PDB ID: 7u5v
+Total activities: 105
+Unique molecules: 69
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 105
+ChEMBL targets: CHEMBL1293299
+UniProt IDs: Q03164
+With confidence scores: 105
+
+Confidence score distribution:
+  Score 8: 1
+  Score 9: 104

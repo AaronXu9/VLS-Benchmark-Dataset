@@ -1,0 +1,11 @@
+PDB ID: 7wlp
+Total activities: 1
+Unique molecules: 1
+Activity types: IC50
+Entries with SMILES: 1
+ChEMBL targets: CHEMBL5724669
+UniProt IDs: P20671
+With confidence scores: 1
+
+Confidence score distribution:
+  Score 9: 1

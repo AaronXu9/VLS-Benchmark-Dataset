@@ -1,0 +1,12 @@
+PDB ID: 7vpe
+Total activities: 50
+Unique molecules: 47
+Activity types: IC50, Ki
+Entries with SMILES: 50
+ChEMBL targets: CHEMBL4295876
+UniProt IDs: Q76NL8
+With confidence scores: 50
+
+Confidence score distribution:
+  Score 8: 28
+  Score 9: 22

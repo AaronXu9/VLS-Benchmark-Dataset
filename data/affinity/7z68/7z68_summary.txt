@@ -1,0 +1,11 @@
+PDB ID: 7z68
+Total activities: 344
+Unique molecules: 263
+Activity types: IC50, Ki
+Entries with SMILES: 344
+ChEMBL targets: CHEMBL1075146
+UniProt IDs: P14756
+With confidence scores: 344
+
+Confidence score distribution:
+  Score 8: 344

@@ -1,0 +1,11 @@
+PDB ID: 8qe2
+Total activities: 4341
+Unique molecules: 1452
+Activity types: IC50, Kd
+Entries with SMILES: 4335
+ChEMBL targets: CHEMBL3313835
+UniProt IDs: P31153
+With confidence scores: 4341
+
+Confidence score distribution:
+  Score 9: 4341

@@ -1,0 +1,12 @@
+PDB ID: 8bua
+Total activities: 1255
+Unique molecules: 430
+Activity types: IC50, Kd
+Entries with SMILES: 1254
+ChEMBL targets: CHEMBL2346490, CHEMBL5465550, CHEMBL3559692
+UniProt IDs: O75909, Q16531, Q9NYV4
+With confidence scores: 1255
+
+Confidence score distribution:
+  Score 8: 278
+  Score 9: 977

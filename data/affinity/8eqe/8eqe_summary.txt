@@ -1,0 +1,12 @@
+PDB ID: 8eqe
+Total activities: 831
+Unique molecules: 230
+Activity types: IC50
+Entries with SMILES: 831
+ChEMBL targets: CHEMBL6030
+UniProt IDs: Q9NZJ5
+With confidence scores: 831
+
+Confidence score distribution:
+  Score 8: 154
+  Score 9: 677

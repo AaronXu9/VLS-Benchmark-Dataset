@@ -1,0 +1,11 @@
+PDB ID: 7umo
+Total activities: 2
+Unique molecules: 2
+Activity types: Kd
+Entries with SMILES: 2
+ChEMBL targets: CHEMBL6066441
+UniProt IDs: Q13432
+With confidence scores: 2
+
+Confidence score distribution:
+  Score 9: 2

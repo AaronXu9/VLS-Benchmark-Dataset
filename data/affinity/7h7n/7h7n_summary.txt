@@ -1,0 +1,11 @@
+PDB ID: 7h7n
+Total activities: 171
+Unique molecules: 80
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 171
+ChEMBL targets: CHEMBL4295622
+UniProt IDs: Q8JUX6
+With confidence scores: 171
+
+Confidence score distribution:
+  Score 8: 171

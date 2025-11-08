@@ -1,0 +1,2 @@
+molecule_chembl_id,canonical_smiles,standard_type,standard_value,standard_units,pchembl_value,activity_comment,assay_chembl_id,confidence_score,target_chembl_id,document_chembl_id,source_pdb_id,source_uniprot_id
+CHEMBL4563780,CCN(CC)CC.CCN(CC)CC.CCN(CC)CC.CCN(CC)CC.CCN(CC)CC.CCN(CC)CC.O=C(N[C@@H]1[C@@H](OP(=O)(O)O)[C@H](OP(=O)(O)O)[C@H](OP(=O)(O)O)[C@H](OP(=O)(O)O)[C@H]1OP(=O)(O)O)C(F)(F)P(=O)(O)O,IC50,375.0,nM,6.43,,CHEMBL4334768,9,CHEMBL4523135,CHEMBL4334428,8g9e,O43314

@@ -1,0 +1,12 @@
+PDB ID: 7yv1
+Total activities: 16794
+Unique molecules: 2838
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 16768
+ChEMBL targets: CHEMBL2189121
+UniProt IDs: P01116
+With confidence scores: 16794
+
+Confidence score distribution:
+  Score 8: 11042
+  Score 9: 5752

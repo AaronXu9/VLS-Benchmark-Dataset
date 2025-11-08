@@ -1,0 +1,11 @@
+PDB ID: 7wyj
+Total activities: 30
+Unique molecules: 30
+Activity types: IC50
+Entries with SMILES: 30
+ChEMBL targets: CHEMBL2295561
+UniProt IDs: P80025
+With confidence scores: 30
+
+Confidence score distribution:
+  Score 9: 30

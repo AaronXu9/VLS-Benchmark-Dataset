@@ -1,0 +1,12 @@
+PDB ID: 8uvl
+Total activities: 6128
+Unique molecules: 1074
+Activity types: IC50, Kd
+Entries with SMILES: 6127
+ChEMBL targets: CHEMBL1163101
+UniProt IDs: O75460
+With confidence scores: 6128
+
+Confidence score distribution:
+  Score 8: 1353
+  Score 9: 4775

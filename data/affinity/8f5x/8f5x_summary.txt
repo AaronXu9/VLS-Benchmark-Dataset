@@ -1,0 +1,12 @@
+PDB ID: 8f5x
+Total activities: 2
+Unique molecules: 2
+Activity types: Ki
+Entries with SMILES: 2
+ChEMBL targets: CHEMBL5120
+UniProt IDs: P10153
+With confidence scores: 2
+
+Confidence score distribution:
+  Score 8: 1
+  Score 9: 1

@@ -1,0 +1,11 @@
+PDB ID: 7u59
+Total activities: 14
+Unique molecules: 14
+Activity types: IC50
+Entries with SMILES: 14
+ChEMBL targets: CHEMBL4802002
+UniProt IDs: F1QCV2
+With confidence scores: 14
+
+Confidence score distribution:
+  Score 9: 14

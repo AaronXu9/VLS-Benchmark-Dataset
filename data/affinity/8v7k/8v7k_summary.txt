@@ -1,0 +1,11 @@
+PDB ID: 8v7k
+Total activities: 54
+Unique molecules: 48
+Activity types: IC50
+Entries with SMILES: 54
+ChEMBL targets: CHEMBL5542
+UniProt IDs: Q9Y253
+With confidence scores: 54
+
+Confidence score distribution:
+  Score 9: 54

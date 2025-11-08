@@ -1,0 +1,12 @@
+PDB ID: 8cjj
+Total activities: 1332
+Unique molecules: 812
+Activity types: IC50, Kd
+Entries with SMILES: 1332
+ChEMBL targets: CHEMBL5689
+UniProt IDs: P17752
+With confidence scores: 1332
+
+Confidence score distribution:
+  Score 8: 33
+  Score 9: 1299

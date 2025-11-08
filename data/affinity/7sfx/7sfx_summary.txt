@@ -1,0 +1,11 @@
+PDB ID: 7sfx
+Total activities: 8
+Unique molecules: 2
+Activity types: Kd
+Entries with SMILES: 8
+ChEMBL targets: CHEMBL5465269
+UniProt IDs: P14209
+With confidence scores: 8
+
+Confidence score distribution:
+  Score 9: 8

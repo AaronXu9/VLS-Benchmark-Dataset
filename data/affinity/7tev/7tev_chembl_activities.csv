@@ -1,0 +1,4 @@
+molecule_chembl_id,canonical_smiles,standard_type,standard_value,standard_units,pchembl_value,activity_comment,assay_chembl_id,confidence_score,target_chembl_id,document_chembl_id,source_pdb_id,source_uniprot_id
+CHEMBL220453,N[C@H]1C[C@@H](C(=O)O)CC1=C(C(F)(F)F)C(F)(F)F,Ki,4.2,nM,8.38,,CHEMBL3626483,9,CHEMBL5954,CHEMBL3621202,7tev,P04181
+CHEMBL1232972,N[C@H]1C=C(C(=O)O)CCC1,Ki,2.1,nM,8.68,,CHEMBL3626483,9,CHEMBL5954,CHEMBL3621202,7tev,P04181
+CHEMBL4747359,N[C@H]1C=C(C(=O)O)C[C@@H]1F,Ki,250000.0,nM,,,CHEMBL4731071,9,CHEMBL5954,CHEMBL4725441,7tev,P04181

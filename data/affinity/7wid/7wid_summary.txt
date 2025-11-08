@@ -1,0 +1,11 @@
+PDB ID: 7wid
+Total activities: 62
+Unique molecules: 62
+Activity types: IC50, Kd
+Entries with SMILES: 62
+ChEMBL targets: CHEMBL1932910
+UniProt IDs: Q2G036
+With confidence scores: 62
+
+Confidence score distribution:
+  Score 8: 62

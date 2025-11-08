@@ -1,0 +1,11 @@
+PDB ID: 8om9
+Total activities: 2
+Unique molecules: 2
+Activity types: IC50, Kd
+Entries with SMILES: 2
+ChEMBL targets: CHEMBL4296019
+UniProt IDs: P43246
+With confidence scores: 2
+
+Confidence score distribution:
+  Score 9: 2

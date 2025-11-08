@@ -1,0 +1,12 @@
+PDB ID: 8te1
+Total activities: 100
+Unique molecules: 52
+Activity types: IC50, Ki
+Entries with SMILES: 100
+ChEMBL targets: CHEMBL1992
+UniProt IDs: Q9Y6K1
+With confidence scores: 100
+
+Confidence score distribution:
+  Score 8: 3
+  Score 9: 97

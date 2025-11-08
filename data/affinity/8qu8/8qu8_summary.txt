@@ -1,0 +1,12 @@
+PDB ID: 8qu8
+Total activities: 18580
+Unique molecules: 3256
+Activity types: IC50, Kd, Ki
+Entries with SMILES: 18552
+ChEMBL targets: CHEMBL2189121, CHEMBL3108660, CHEMBL6067545, CHEMBL6067537, CHEMBL3259469, CHEMBL3259468
+UniProt IDs: P01116, P40337, P62877, Q15369, Q13617, Q15370
+With confidence scores: 18580
+
+Confidence score distribution:
+  Score 8: 11893
+  Score 9: 6687
