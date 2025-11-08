@@ -12,14 +12,12 @@
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=aoxu@usc.edu
 
-# Load required modules
-module purge
-module load python/3.11.3
-module load gcc/11.3.0
-
 # Activate conda environment
 source ~/.bashrc
-conda activate PoseBench 
+conda activate PoseBench
+
+# Install required packages if missing
+# pip install pyarrow pandas requests -q
 
 # Create output directories if they don't exist
 mkdir -p logs
