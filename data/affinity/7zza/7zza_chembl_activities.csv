@@ -1,6 +1,0 @@
-molecule_chembl_id,canonical_smiles,standard_type,standard_value,standard_units,pchembl_value,activity_comment,assay_chembl_id,confidence_score,target_chembl_id,document_chembl_id,source_pdb_id,source_uniprot_id
-CHEMBL5092710,NC[C@H]1O[C@@H](n2c(Br)nc3c(N)ncnc32)[C@H](O)[C@@H]1O,IC50,300000.0,nM,,,CHEMBL5050980,8,CHEMBL4523411,CHEMBL5050830,7zza,Q8Y8D7
-CHEMBL4552749,[N-]=[N+]=NC[C@H]1O[C@@H](n2c(SCC(=O)NC[C@H]3O[C@@H](n4cnc5c(N)ncnc54)[C@H](O)[C@@H]3O)nc3c(N)ncnc32)[C@H](O)[C@@H]1O,Ki,25000.0,nM,4.6,,CHEMBL4357302,8,CHEMBL4523411,CHEMBL4354833,7zza,Q8Y8D7
-CHEMBL5084513,Nc1ncnc2c1ncn2[C@@H]1O[C@H](COCC#Cc2nc3c(N)ncnc3n2[C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)[C@@H](O)[C@H]1O,Ki,20000.0,nM,4.7,,CHEMBL5050980,8,CHEMBL4523411,CHEMBL5050830,7zza,Q8Y8D7
-CHEMBL5083328,NC[C@H]1O[C@@H](n2c(SCC(=O)NC[C@H]3O[C@@H](n4cnc5c(N)ncnc54)[C@H](O)[C@@H]3O)nc3c(N)ncnc32)[C@H](O)[C@@H]1O,Ki,30000.0,nM,4.52,,CHEMBL5050980,8,CHEMBL4523411,CHEMBL5050830,7zza,Q8Y8D7
-CHEMBL5080064,Nc1ncnc2c1ncn2[C@@H]1O[C@H](CNCC#Cc2nc3c(N)ncnc3n2[C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)[C@@H](O)[C@H]1O,Ki,10000.0,nM,5.0,,CHEMBL5050980,8,CHEMBL4523411,CHEMBL5050830,7zza,Q8Y8D7

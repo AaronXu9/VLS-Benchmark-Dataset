@@ -1,2 +1,0 @@
-molecule_chembl_id,canonical_smiles,standard_type,standard_value,standard_units,pchembl_value,activity_comment,assay_chembl_id,confidence_score,target_chembl_id,document_chembl_id,source_pdb_id,source_uniprot_id
-CHEMBL5412814,CN(C)CCCNc1nc(NCC2CCNCC2)c2cc(-c3ccccc3)ccc2n1,Kd,24000.0,nM,4.62,,CHEMBL5393144,9,CHEMBL5465334,CHEMBL5390305,8pd6,Q8NG06

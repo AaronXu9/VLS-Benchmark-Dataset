@@ -1,2 +1,0 @@
-molecule_chembl_id,canonical_smiles,standard_type,standard_value,standard_units,pchembl_value,activity_comment,assay_chembl_id,confidence_score,target_chembl_id,document_chembl_id,source_pdb_id,source_uniprot_id
-CHEMBL3275147,C#Cc1c(COP(=O)(O)O)cnc(C)c1O,Ki,550.0,nM,6.26,,CHEMBL3282830,9,CHEMBL3271932,CHEMBL3272067,8qyt,Q9NVS9

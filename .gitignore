@@ -38,6 +38,7 @@ ipython_config.py
 
 # Data directories (large files)
 data/*.parquet
+data/affinity/
 data/chembl_activities_runsNposees/
 data/affinity_enriched/
 data/affinity_pruned/

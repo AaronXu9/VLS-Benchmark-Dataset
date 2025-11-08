@@ -1,4 +1,0 @@
-molecule_chembl_id,canonical_smiles,standard_type,standard_value,standard_units,pchembl_value,activity_comment,assay_chembl_id,confidence_score,target_chembl_id,document_chembl_id,source_pdb_id,source_uniprot_id
-CHEMBL477,Nc1ncnc2c1ncn2[C@@H]1O[C@H](CO)[C@@H](O)[C@H]1O,Kd,168000.0,nM,,,CHEMBL2210840,9,CHEMBL1075026,CHEMBL2202973,8aqd,P22629
-CHEMBL280317,CS(=O)(=O)c1ccc(-c2nc(-c3ccc(F)cc3)c(-c3ccncc3)[nH]2)cc1,Kd,11.0,nM,7.96,,CHEMBL3369575,9,CHEMBL1075026,CHEMBL3351755,8aqd,P22629
-CHEMBL857,O=C(O)CCCC[C@@H]1SC[C@@H]2NC(=O)N[C@@H]21,Kd,1e-05,nM,,,CHEMBL3369575,9,CHEMBL1075026,CHEMBL3351755,8aqd,P22629

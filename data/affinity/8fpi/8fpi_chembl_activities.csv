@@ -1,2 +1,0 @@
-molecule_chembl_id,canonical_smiles,standard_type,standard_value,standard_units,pchembl_value,activity_comment,assay_chembl_id,confidence_score,target_chembl_id,document_chembl_id,source_pdb_id,source_uniprot_id
-CHEMBL4091425,Cc1cnc(N2CC3(CCOCC3)C2)c(C(=O)Nc2ccc(C(=O)N3CCc4cc(-c5nc6cccc(F)c6[nH]5)sc4-c4ccccc43)cc2)c1,IC50,2.0,nM,8.7,,CHEMBL4039065,9,CHEMBL4105718,CHEMBL4038291,8fpi,P03421
