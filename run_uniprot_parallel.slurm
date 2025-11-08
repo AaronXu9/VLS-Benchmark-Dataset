@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=16GB
-#SBATCH --time=01:00:00
+#SBATCH --time=06:00:00
 #SBATCH --output=logs/uniprot_extract_%j.out
 #SBATCH --error=logs/uniprot_extract_%j.err
 #SBATCH --mail-type=END,FAIL
