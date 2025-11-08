@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=chembl_parallel
-#SBATCH --account=<YOUR_ACCOUNT>
+#SBATCH --account=katritch_223
 #SBATCH --partition=main
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -10,7 +10,7 @@
 #SBATCH --output=logs/chembl_retrieval_%j.out
 #SBATCH --error=logs/chembl_retrieval_%j.err
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=<YOUR_EMAIL>
+#SBATCH --mail-user=aoxu@example.com
 
 # USC CARC SLURM Job Script for Parallel ChEMBL Retrieval
 # 

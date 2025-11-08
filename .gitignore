@@ -45,6 +45,7 @@ data/affinity_pruned/
 data/affinity_pruned_test/
 data/affinity_test/
 data/pruning_plots_test/
+data/test*
 
 # Keep only summary files in data/
 !data/filtering_statistics.csv

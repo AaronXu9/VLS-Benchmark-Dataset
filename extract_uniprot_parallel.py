@@ -1,0 +1,362 @@
+#!/usr/bin/env python3
+"""
+Parallel PDB Chain to UniProt ID mapping for PLINDER systems.
+
+This script efficiently maps PDB chains to UniProt IDs using multiprocessing.
+Optimized for processing large numbers of PLINDER system IDs.
+"""
+
+import pandas as pd
+import numpy as np
+from pathlib import Path
+import time
+import json
+import requests
+from multiprocessing import Pool, Manager, cpu_count
+import argparse
+import logging
+from datetime import datetime
+import sys
+
+
+def setup_logging(output_dir):
+    """Setup logging to both file and console."""
+    log_dir = Path(output_dir) if output_dir else Path('.')
+    log_dir.mkdir(parents=True, exist_ok=True)
+    
+    log_file = log_dir / f"uniprot_mapping_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+    
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(processName)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_file),
+            logging.StreamHandler(sys.stdout)
+        ]
+    )
+    
+    return logging.getLogger(__name__)
+
+
+def parse_plinder_system_id(system_id):
+    """
+    Parse PLINDER system ID into components.
+    Format: <PDB ID>__<assembly>__<receptor chain>__<ligand chain>
+    
+    Example: 7eek__1__1.A__1.I
+    """
+    parts = system_id.split('__')
+    
+    if len(parts) == 4:
+        pdb_id, assembly, receptor_chain, ligand_chain = parts
+        # Extract just the chain letter (after the dot)
+        receptor_chain_only = receptor_chain.split('.')[-1] if '.' in receptor_chain else receptor_chain
+        
+        return {
+            'pdb_id': pdb_id.lower(),
+            'receptor_chain': receptor_chain_only,
+            'assembly': assembly,
+            'ligand_chain': ligand_chain
+        }
+    else:
+        # Fallback for non-standard format
+        return {
+            'pdb_id': system_id.split('__')[0].lower() if '__' in system_id else system_id.lower(),
+            'receptor_chain': None,
+            'assembly': None,
+            'ligand_chain': None
+        }
+
+
+def map_pdb_chain_to_uniprot_api(pdb_id, chain_id):
+    """
+    Map PDB ID + specific chain to UniProt accessions using RCSB GraphQL API.
+    
+    This uses the GraphQL API which provides chain-specific mappings.
+    """
+    if not chain_id:
+        return []
+    
+    # Use GraphQL API to get chain to UniProt mappings
+    query = '''
+    {
+      entry(entry_id: "%s") {
+        polymer_entities {
+          rcsb_polymer_entity_container_identifiers {
+            auth_asym_ids
+            uniprot_ids
+          }
+        }
+      }
+    }
+    ''' % pdb_id.upper()
+    
+    try:
+        url = 'https://data.rcsb.org/graphql'
+        response = requests.post(url, json={'query': query}, timeout=10)
+        
+        if response.status_code == 200:
+            data = response.json()
+            
+            if 'data' in data and data['data'] and 'entry' in data['data']:
+                entry = data['data']['entry']
+                if entry and 'polymer_entities' in entry:
+                    # Find the entity that contains our chain
+                    for entity in entry['polymer_entities']:
+                        if 'rcsb_polymer_entity_container_identifiers' in entity:
+                            identifiers = entity['rcsb_polymer_entity_container_identifiers']
+                            auth_asym_ids = identifiers.get('auth_asym_ids', [])
+                            uniprot_ids = identifiers.get('uniprot_ids', [])
+                            
+                            # Check if this entity contains our chain
+                            if chain_id.upper() in [c.upper() for c in auth_asym_ids]:
+                                if uniprot_ids:
+                                    return list(set(uniprot_ids))
+    except Exception as e:
+        pass
+    
+    return []
+
+
+def process_pdb_chain_batch(args):
+    """
+    Process a batch of PDB + Chain combinations.
+    
+    This is the worker function for parallel processing.
+    
+    Parameters:
+    -----------
+    args : tuple
+        (batch_data, progress_dict, total_batches, batch_idx)
+    
+    Returns:
+    --------
+    dict : Mapping results for this batch
+    """
+    batch_data, progress_dict, total_batches, batch_idx = args
+    logger = logging.getLogger(__name__)
+    
+    results = {}
+    
+    for pdb_id, chain_id in batch_data:
+        pdb_chain_key = f"{pdb_id}_{chain_id}"
+        
+        try:
+            uniprot_ids = map_pdb_chain_to_uniprot_api(pdb_id, chain_id)
+            results[pdb_chain_key] = uniprot_ids
+            
+            # Rate limiting - be nice to RCSB API
+            time.sleep(0.2)
+            
+        except Exception as e:
+            logger.error(f"Error mapping {pdb_id} chain {chain_id}: {e}")
+            results[pdb_chain_key] = []
+    
+    # Update progress
+    progress_dict[batch_idx] = len(batch_data)
+    completed = sum(progress_dict.values())
+    
+    logger.info(f"Batch {batch_idx}/{total_batches} complete - Overall progress: {completed} mappings")
+    
+    return results
+
+
+def parallel_map_pdb_chains(pdb_chain_combos, num_workers=4, batch_size=10):
+    """
+    Map PDB + Chain combinations to UniProt IDs in parallel.
+    
+    Parameters:
+    -----------
+    pdb_chain_combos : list of tuples
+        List of (pdb_id, chain_id) tuples
+    num_workers : int
+        Number of parallel workers
+    batch_size : int
+        Number of items per batch
+    
+    Returns:
+    --------
+    dict : Mapping of pdb_chain_key -> list of UniProt IDs
+    """
+    logger = logging.getLogger(__name__)
+    logger.info(f"Starting parallel mapping with {num_workers} workers")
+    logger.info(f"Total PDB+Chain combinations: {len(pdb_chain_combos)}")
+    
+    # Create batches
+    batches = [pdb_chain_combos[i:i+batch_size] for i in range(0, len(pdb_chain_combos), batch_size)]
+    logger.info(f"Created {len(batches)} batches of size ~{batch_size}")
+    
+    # Create shared progress tracker
+    manager = Manager()
+    progress_dict = manager.dict()
+    
+    # Prepare work items
+    work_items = []
+    for idx, batch in enumerate(batches):
+        work_items.append((batch, progress_dict, len(batches), idx))
+    
+    # Process in parallel
+    all_results = {}
+    
+    with Pool(processes=num_workers) as pool:
+        batch_results = pool.map(process_pdb_chain_batch, work_items)
+    
+    # Combine results
+    for batch_result in batch_results:
+        all_results.update(batch_result)
+    
+    logger.info(f"Mapping complete! Total mappings: {len(all_results)}")
+    
+    # Count successes
+    success_count = sum(1 for uniprots in all_results.values() if uniprots)
+    logger.info(f"Successful mappings: {success_count}/{len(all_results)}")
+    
+    return all_results
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Parallel PDB Chain to UniProt ID mapping for PLINDER systems'
+    )
+    parser.add_argument(
+        '--input',
+        required=True,
+        help='Input parquet file with system_id column'
+    )
+    parser.add_argument(
+        '--output',
+        required=True,
+        help='Output parquet file with UniProt mappings'
+    )
+    parser.add_argument(
+        '--workers',
+        type=int,
+        default=None,
+        help='Number of parallel workers (default: CPU count - 1)'
+    )
+    parser.add_argument(
+        '--batch-size',
+        type=int,
+        default=10,
+        help='Number of mappings per batch'
+    )
+    parser.add_argument(
+        '--test',
+        type=int,
+        default=None,
+        help='Test mode: only process first N systems'
+    )
+    parser.add_argument(
+        '--log-dir',
+        default='logs',
+        help='Directory for log files'
+    )
+    
+    args = parser.parse_args()
+    
+    # Setup logging
+    logger = setup_logging(args.log_dir)
+    
+    logger.info("="*80)
+    logger.info("Parallel PDB Chain to UniProt Mapping")
+    logger.info("="*80)
+    
+    # Determine number of workers
+    num_workers = args.workers if args.workers else max(1, cpu_count() - 1)
+    logger.info(f"Using {num_workers} parallel workers")
+    
+    # Load data
+    logger.info(f"Loading data from {args.input}")
+    df = pd.read_parquet(args.input)
+    logger.info(f"Loaded {len(df)} systems")
+    
+    # Test mode
+    if args.test:
+        df = df.head(args.test)
+        logger.info(f"TEST MODE: Processing only {len(df)} systems")
+    
+    # Parse system IDs
+    logger.info("Parsing PLINDER system IDs...")
+    parsed_data = df['system_id'].apply(parse_plinder_system_id)
+    
+    df['pdb_id'] = parsed_data.apply(lambda x: x['pdb_id'])
+    df['receptor_chain'] = parsed_data.apply(lambda x: x['receptor_chain'])
+    df['ligand_chain'] = parsed_data.apply(lambda x: x['ligand_chain'])
+    df['assembly_id'] = parsed_data.apply(lambda x: x['assembly'])
+    
+    # Get unique PDB + Chain combinations
+    unique_combos = df[['pdb_id', 'receptor_chain']].drop_duplicates()
+    unique_combos = unique_combos[unique_combos['receptor_chain'].notna()]
+    
+    pdb_chain_list = list(unique_combos.itertuples(index=False, name=None))
+    
+    logger.info(f"Unique PDB+Chain combinations: {len(pdb_chain_list)}")
+    logger.info(f"Sample: {pdb_chain_list[:5]}")
+    
+    # Parallel mapping
+    logger.info("\n" + "="*80)
+    logger.info("Starting parallel mapping...")
+    logger.info("="*80 + "\n")
+    
+    start_time = time.time()
+    
+    mapping_results = parallel_map_pdb_chains(
+        pdb_chain_list,
+        num_workers=num_workers,
+        batch_size=args.batch_size
+    )
+    
+    elapsed_time = time.time() - start_time
+    
+    logger.info(f"\nMapping completed in {elapsed_time:.2f} seconds")
+    logger.info(f"Average time per mapping: {elapsed_time/len(pdb_chain_list):.2f} seconds")
+    
+    # Add results to dataframe
+    df['pdb_chain_key'] = df['pdb_id'] + '_' + df['receptor_chain']
+    df['uniprot_ids'] = df['pdb_chain_key'].map(mapping_results)
+    df['uniprot_ids_str'] = df['uniprot_ids'].apply(lambda x: ', '.join(x) if x else '')
+    
+    # Summary
+    logger.info("\n" + "="*80)
+    logger.info("SUMMARY")
+    logger.info("="*80)
+    logger.info(f"Total systems: {len(df)}")
+    logger.info(f"Systems with UniProt IDs: {df['uniprot_ids_str'].astype(bool).sum()}")
+    logger.info(f"Systems without UniProt IDs: {(~df['uniprot_ids_str'].astype(bool)).sum()}")
+    logger.info(f"Unique UniProt IDs found: {len(set([uid for uids in df['uniprot_ids'].dropna() for uid in uids if uids]))}")
+    
+    # Save results
+    output_path = Path(args.output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(output_path)
+    logger.info(f"\n✓ Results saved to: {output_path}")
+    
+    # Save mapping as JSON for reference
+    mapping_file = output_path.parent / f"{output_path.stem}_mapping.json"
+    with open(mapping_file, 'w') as f:
+        json.dump(mapping_results, f, indent=2)
+    logger.info(f"✓ Mapping dictionary saved to: {mapping_file}")
+    
+    # Save summary
+    summary = {
+        'total_systems': len(df),
+        'unique_pdb_chain_combos': len(pdb_chain_list),
+        'systems_with_uniprot': int(df['uniprot_ids_str'].astype(bool).sum()),
+        'systems_without_uniprot': int((~df['uniprot_ids_str'].astype(bool)).sum()),
+        'unique_uniprot_ids': len(set([uid for uids in df['uniprot_ids'].dropna() for uid in uids if uids])),
+        'processing_time_seconds': elapsed_time,
+        'workers_used': num_workers,
+        'batch_size': args.batch_size,
+        'date': datetime.now().isoformat()
+    }
+    
+    summary_file = output_path.parent / f"{output_path.stem}_summary.json"
+    with open(summary_file, 'w') as f:
+        json.dump(summary, f, indent=2)
+    logger.info(f"✓ Summary saved to: {summary_file}")
+    
+    logger.info("\n✓ All done!")
+
+
+if __name__ == '__main__':
+    main()
