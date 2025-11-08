@@ -12,12 +12,11 @@
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=aoxu@usc.edu
 
-# Activate conda environment
-source ~/.bashrc
-conda activate PoseBench
+# Initialize conda for bash
+eval "$(conda shell.bash hook)"
 
-# Install required packages if missing
-# pip install pyarrow pandas requests -q
+# Activate conda environment using full path
+conda activate /home1/aoxu/.conda/envs/PoseBench
 
 # Create output directories if they don't exist
 mkdir -p logs
@@ -29,6 +28,16 @@ echo "Job Name: $SLURM_JOB_NAME"
 echo "Node: $SLURM_NODELIST"
 echo "Number of CPUs: $SLURM_CPUS_PER_TASK"
 echo "Start Time: $(date)"
+echo ""
+echo "Python environment info:"
+which python
+python --version
+echo "Conda environment: $CONDA_DEFAULT_ENV"
+echo ""
+echo "Checking required packages:"
+python -c "import pandas; print(f'pandas: {pandas.__version__}')"
+python -c "import pyarrow; print(f'pyarrow: {pyarrow.__version__}')"
+python -c "import requests; print(f'requests: {requests.__version__}')"
 echo "=========================================="
 
 # Run the UniProt extraction script
