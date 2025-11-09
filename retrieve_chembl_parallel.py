@@ -52,7 +52,7 @@ def setup_logging(output_dir):
 
 
 def query_chembl_activities_complete(uniprot_id, standard_types=['IC50', 'Ki', 'Kd', 'EC50'], 
-                                     max_activities=1000):
+                                     max_activities=None):
     """
     Query ChEMBL for activities with ALL annotations in ONE step.
     
@@ -64,8 +64,10 @@ def query_chembl_activities_complete(uniprot_id, standard_types=['IC50', 'Ki', '
         UniProt accession
     standard_types : list
         Activity types to retrieve
-    max_activities : int
-        Maximum activities to retrieve
+    max_activities : int or None
+        Maximum activities to retrieve per UniProt ID. 
+        None = retrieve all (recommended for production).
+        WARNING: Setting too low may miss relevant compounds!
     
     Returns:
     --------
@@ -77,7 +79,11 @@ def query_chembl_activities_complete(uniprot_id, standard_types=['IC50', 'Ki', '
             target_organism='Homo sapiens',
             standard_type__in=standard_types,
             target_components__accession=uniprot_id
-        )[:max_activities]
+        )
+        
+        # Apply limit if specified (mainly for testing)
+        if max_activities is not None:
+            activities = activities[:max_activities]
         
         if not activities:
             return None
@@ -172,6 +178,11 @@ def query_chembl_activities_complete(uniprot_id, standard_types=['IC50', 'Ki', '
             activities_list.append(activity_dict)
         
         df = pd.DataFrame(activities_list)
+        
+        # Log statistics
+        logger = logging.getLogger(__name__)
+        logger.info(f"{uniprot_id}: Retrieved {len(df)} activities, {df['molecule_chembl_id'].nunique()} unique compounds, {df['assay_chembl_id'].nunique()} unique assays")
+        
         return df
     
     except Exception as e:
@@ -371,8 +382,8 @@ def main():
     parser.add_argument(
         '--max-activities',
         type=int,
-        default=1000,
-        help='Maximum activities per UniProt ID'
+        default=3000,
+        help='Maximum activities per UniProt ID (None = unlimited, recommended for production)'
     )
     parser.add_argument(
         '--standard-types',

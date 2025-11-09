@@ -58,8 +58,9 @@ def main():
         '--input', str(test_file),
         '--output', 'data/chembl_test',
         '--final-output', 'data/chembl_test/chembl_test_merged.parquet',
-        '--workers', '4',
-        '--max-activities', '100'  # Limit for testing
+        '--workers', '4'
+        # Note: --max-activities removed to get ALL activities (production mode)
+        # For quick testing, add: '--max-activities', '100'
     ]
     
     result = subprocess.run(cmd)
