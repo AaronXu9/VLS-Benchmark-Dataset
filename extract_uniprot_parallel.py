@@ -17,6 +17,7 @@ import argparse
 import logging
 from datetime import datetime
 import sys
+import signal
 
 
 def setup_logging(output_dir):
@@ -236,6 +237,17 @@ def parallel_map_pdb_chains(pdb_chain_combos, num_workers=4, batch_size=10, chec
     for idx, batch in enumerate(batches):
         work_items.append((batch, progress_dict, len(batches), idx, checkpoint_file))
     
+    # Setup signal handler for graceful shutdown (SLURM sends SIGTERM)
+    def signal_handler(signum, frame):
+        logger.warning(f"Received signal {signum}! Saving checkpoint...")
+        if checkpoint_file:
+            save_checkpoint(all_results, checkpoint_file)
+            logger.info(f"Checkpoint saved: {len(all_results)} mappings")
+        sys.exit(1)
+    
+    signal.signal(signal.SIGTERM, signal_handler)
+    signal.signal(signal.SIGINT, signal_handler)  # Ctrl+C
+    
     # Process in parallel with periodic checkpointing
     try:
         with Pool(processes=num_workers) as pool:
@@ -247,7 +259,7 @@ def parallel_map_pdb_chains(pdb_chain_combos, num_workers=4, batch_size=10, chec
                     save_checkpoint(all_results, checkpoint_file)
                     logger.info(f"Checkpoint saved: {len(all_results)} mappings")
     
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, SystemExit):
         logger.warning("Process interrupted! Saving checkpoint...")
         if checkpoint_file:
             save_checkpoint(all_results, checkpoint_file)
