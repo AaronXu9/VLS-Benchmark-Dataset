@@ -118,6 +118,27 @@ def map_pdb_chain_to_uniprot_api(pdb_id, chain_id):
     return []
 
 
+def load_checkpoint(checkpoint_file):
+    """Load existing mapping results from checkpoint file."""
+    if Path(checkpoint_file).exists():
+        try:
+            with open(checkpoint_file, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            logging.getLogger(__name__).warning(f"Failed to load checkpoint: {e}")
+    return {}
+
+
+def save_checkpoint(results, checkpoint_file):
+    """Save mapping results to checkpoint file."""
+    try:
+        Path(checkpoint_file).parent.mkdir(parents=True, exist_ok=True)
+        with open(checkpoint_file, 'w') as f:
+            json.dump(results, f, indent=2)
+    except Exception as e:
+        logging.getLogger(__name__).error(f"Failed to save checkpoint: {e}")
+
+
 def process_pdb_chain_batch(args):
     """
     Process a batch of PDB + Chain combinations.
@@ -127,13 +148,13 @@ def process_pdb_chain_batch(args):
     Parameters:
     -----------
     args : tuple
-        (batch_data, progress_dict, total_batches, batch_idx)
+        (batch_data, progress_dict, total_batches, batch_idx, checkpoint_file)
     
     Returns:
     --------
     dict : Mapping results for this batch
     """
-    batch_data, progress_dict, total_batches, batch_idx = args
+    batch_data, progress_dict, total_batches, batch_idx, checkpoint_file = args
     logger = logging.getLogger(__name__)
     
     results = {}
@@ -161,7 +182,7 @@ def process_pdb_chain_batch(args):
     return results
 
 
-def parallel_map_pdb_chains(pdb_chain_combos, num_workers=4, batch_size=10):
+def parallel_map_pdb_chains(pdb_chain_combos, num_workers=4, batch_size=10, checkpoint_file=None):
     """
     Map PDB + Chain combinations to UniProt IDs in parallel.
     
@@ -173,6 +194,8 @@ def parallel_map_pdb_chains(pdb_chain_combos, num_workers=4, batch_size=10):
         Number of parallel workers
     batch_size : int
         Number of items per batch
+    checkpoint_file : str
+        Path to checkpoint file for resume capability
     
     Returns:
     --------
@@ -181,6 +204,24 @@ def parallel_map_pdb_chains(pdb_chain_combos, num_workers=4, batch_size=10):
     logger = logging.getLogger(__name__)
     logger.info(f"Starting parallel mapping with {num_workers} workers")
     logger.info(f"Total PDB+Chain combinations: {len(pdb_chain_combos)}")
+    
+    # Load existing checkpoint if available
+    all_results = {}
+    if checkpoint_file:
+        all_results = load_checkpoint(checkpoint_file)
+        if all_results:
+            logger.info(f"Loaded {len(all_results)} existing mappings from checkpoint")
+            # Filter out already processed combinations
+            existing_keys = set(all_results.keys())
+            pdb_chain_combos = [
+                combo for combo in pdb_chain_combos 
+                if f"{combo[0]}_{combo[1]}" not in existing_keys
+            ]
+            logger.info(f"Remaining PDB+Chain combinations to process: {len(pdb_chain_combos)}")
+            
+            if not pdb_chain_combos:
+                logger.info("All mappings already complete!")
+                return all_results
     
     # Create batches
     batches = [pdb_chain_combos[i:i+batch_size] for i in range(0, len(pdb_chain_combos), batch_size)]
@@ -193,17 +234,24 @@ def parallel_map_pdb_chains(pdb_chain_combos, num_workers=4, batch_size=10):
     # Prepare work items
     work_items = []
     for idx, batch in enumerate(batches):
-        work_items.append((batch, progress_dict, len(batches), idx))
+        work_items.append((batch, progress_dict, len(batches), idx, checkpoint_file))
     
-    # Process in parallel
-    all_results = {}
+    # Process in parallel with periodic checkpointing
+    try:
+        with Pool(processes=num_workers) as pool:
+            for i, batch_result in enumerate(pool.imap_unordered(process_pdb_chain_batch, work_items)):
+                all_results.update(batch_result)
+                
+                # Save checkpoint every 10 batches or at the end
+                if checkpoint_file and (i % 10 == 0 or i == len(work_items) - 1):
+                    save_checkpoint(all_results, checkpoint_file)
+                    logger.info(f"Checkpoint saved: {len(all_results)} mappings")
     
-    with Pool(processes=num_workers) as pool:
-        batch_results = pool.map(process_pdb_chain_batch, work_items)
-    
-    # Combine results
-    for batch_result in batch_results:
-        all_results.update(batch_result)
+    except KeyboardInterrupt:
+        logger.warning("Process interrupted! Saving checkpoint...")
+        if checkpoint_file:
+            save_checkpoint(all_results, checkpoint_file)
+        raise
     
     logger.info(f"Mapping complete! Total mappings: {len(all_results)}")
     
@@ -251,6 +299,16 @@ def main():
         default='logs',
         help='Directory for log files'
     )
+    parser.add_argument(
+        '--checkpoint',
+        default=None,
+        help='Checkpoint file for resume capability (default: auto-generated in output directory)'
+    )
+    parser.add_argument(
+        '--no-checkpoint',
+        action='store_true',
+        help='Disable checkpoint saving'
+    )
     
     args = parser.parse_args()
     
@@ -264,6 +322,19 @@ def main():
     # Determine number of workers
     num_workers = args.workers if args.workers else max(1, cpu_count() - 1)
     logger.info(f"Using {num_workers} parallel workers")
+    
+    # Setup checkpoint file
+    checkpoint_file = None
+    if not args.no_checkpoint:
+        if args.checkpoint:
+            checkpoint_file = args.checkpoint
+        else:
+            # Auto-generate checkpoint filename
+            output_path = Path(args.output)
+            checkpoint_file = output_path.parent / f".{output_path.stem}_checkpoint.json"
+        logger.info(f"Checkpoint file: {checkpoint_file}")
+    else:
+        logger.info("Checkpoint disabled")
     
     # Load data
     logger.info(f"Loading data from {args.input}")
@@ -303,7 +374,8 @@ def main():
     mapping_results = parallel_map_pdb_chains(
         pdb_chain_list,
         num_workers=num_workers,
-        batch_size=args.batch_size
+        batch_size=args.batch_size,
+        checkpoint_file=checkpoint_file
     )
     
     elapsed_time = time.time() - start_time
@@ -354,6 +426,14 @@ def main():
     with open(summary_file, 'w') as f:
         json.dump(summary, f, indent=2)
     logger.info(f"✓ Summary saved to: {summary_file}")
+    
+    # Clean up checkpoint file if successful
+    if checkpoint_file and Path(checkpoint_file).exists():
+        try:
+            Path(checkpoint_file).unlink()
+            logger.info(f"✓ Checkpoint file removed (job complete)")
+        except Exception as e:
+            logger.warning(f"Could not remove checkpoint file: {e}")
     
     logger.info("\n✓ All done!")
 
