@@ -16,7 +16,7 @@ def main():
     print("="*70)
     
     # Check input file exists
-    input_file = Path('data/test_uniprot_parallel_200.parquet')
+    input_file = Path('data/test_uniprot_parallel.parquet')
     if not input_file.exists():
         print(f"❌ Input file not found: {input_file}")
         print("   Run extract_uniprot_ids.ipynb first!")
