@@ -16,7 +16,7 @@ def main():
     print("="*70)
     
     # Check input file exists
-    input_file = Path('data/annotation_table_with_uniprot.parquet')
+    input_file = Path('data/test_uniprot_parallel_200.parquet')
     if not input_file.exists():
         print(f"❌ Input file not found: {input_file}")
         print("   Run extract_uniprot_ids.ipynb first!")
@@ -57,7 +57,7 @@ def main():
         'retrieve_chembl_parallel.py',
         '--input', str(test_file),
         '--output', 'data/chembl_test',
-        '--final-output', 'data/chembl_test_merged.parquet',
+        '--final-output', 'data/chembl_test/chembl_test_merged.parquet',
         '--workers', '4',
         '--max-activities', '100'  # Limit for testing
     ]

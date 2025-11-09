@@ -75,7 +75,10 @@ def map_pdb_chain_to_uniprot_api(pdb_id, chain_id):
     
     This uses the GraphQL API which provides chain-specific mappings.
     """
+    logger = logging.getLogger(__name__)
+    
     if not chain_id:
+        logger.warning(f"No chain_id provided for {pdb_id}")
         return []
     
     # Use GraphQL API to get chain to UniProt mappings
@@ -96,25 +99,44 @@ def map_pdb_chain_to_uniprot_api(pdb_id, chain_id):
         url = 'https://data.rcsb.org/graphql'
         response = requests.post(url, json={'query': query}, timeout=10)
         
-        if response.status_code == 200:
-            data = response.json()
+        if response.status_code != 200:
+            logger.warning(f"API returned status {response.status_code} for {pdb_id}")
+            return []
+        
+        data = response.json()
+        
+        # Check for GraphQL errors
+        if 'errors' in data:
+            logger.warning(f"GraphQL errors for {pdb_id}: {data['errors']}")
+            return []
             
-            if 'data' in data and data['data'] and 'entry' in data['data']:
-                entry = data['data']['entry']
-                if entry and 'polymer_entities' in entry:
-                    # Find the entity that contains our chain
-                    for entity in entry['polymer_entities']:
-                        if 'rcsb_polymer_entity_container_identifiers' in entity:
-                            identifiers = entity['rcsb_polymer_entity_container_identifiers']
-                            auth_asym_ids = identifiers.get('auth_asym_ids', [])
-                            uniprot_ids = identifiers.get('uniprot_ids', [])
-                            
-                            # Check if this entity contains our chain
-                            if chain_id.upper() in [c.upper() for c in auth_asym_ids]:
-                                if uniprot_ids:
-                                    return list(set(uniprot_ids))
+        if 'data' in data and data['data'] and 'entry' in data['data']:
+            entry = data['data']['entry']
+            if entry and 'polymer_entities' in entry:
+                # Find the entity that contains our chain
+                for entity in entry['polymer_entities']:
+                    if 'rcsb_polymer_entity_container_identifiers' in entity:
+                        identifiers = entity['rcsb_polymer_entity_container_identifiers']
+                        auth_asym_ids = identifiers.get('auth_asym_ids', [])
+                        uniprot_ids = identifiers.get('uniprot_ids', [])
+                        
+                        # Check if this entity contains our chain
+                        if chain_id.upper() in [c.upper() for c in auth_asym_ids]:
+                            if uniprot_ids:
+                                return list(set(uniprot_ids))
+                
+                logger.debug(f"Chain {chain_id} not found in {pdb_id}")
+            else:
+                logger.warning(f"No polymer_entities for {pdb_id}")
+        else:
+            logger.warning(f"Unexpected API response structure for {pdb_id}")
+            
+    except requests.exceptions.Timeout:
+        logger.error(f"Timeout for {pdb_id} chain {chain_id}")
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Request error for {pdb_id} chain {chain_id}: {e}")
     except Exception as e:
-        pass
+        logger.error(f"Unexpected error for {pdb_id} chain {chain_id}: {e}")
     
     return []
 
@@ -159,6 +181,8 @@ def process_pdb_chain_batch(args):
     logger = logging.getLogger(__name__)
     
     results = {}
+    successful = 0
+    failed = 0
     
     for pdb_id, chain_id in batch_data:
         pdb_chain_key = f"{pdb_id}_{chain_id}"
@@ -167,18 +191,26 @@ def process_pdb_chain_batch(args):
             uniprot_ids = map_pdb_chain_to_uniprot_api(pdb_id, chain_id)
             results[pdb_chain_key] = uniprot_ids
             
+            if uniprot_ids:
+                successful += 1
+                logger.debug(f"✓ {pdb_id} chain {chain_id} → {uniprot_ids}")
+            else:
+                failed += 1
+                logger.debug(f"✗ {pdb_id} chain {chain_id} → no mapping")
+            
             # Rate limiting - be nice to RCSB API
             time.sleep(0.2)
             
         except Exception as e:
             logger.error(f"Error mapping {pdb_id} chain {chain_id}: {e}")
             results[pdb_chain_key] = []
+            failed += 1
     
     # Update progress
     progress_dict[batch_idx] = len(batch_data)
     completed = sum(progress_dict.values())
     
-    logger.info(f"Batch {batch_idx}/{total_batches} complete - Overall progress: {completed} mappings")
+    logger.info(f"Batch {batch_idx}/{total_batches} complete - Progress: {completed} mappings total ({successful} success, {failed} failed in this batch)")
     
     return results
 
@@ -238,31 +270,48 @@ def parallel_map_pdb_chains(pdb_chain_combos, num_workers=4, batch_size=10, chec
         work_items.append((batch, progress_dict, len(batches), idx, checkpoint_file))
     
     # Setup signal handler for graceful shutdown (SLURM sends SIGTERM)
+    # Use a container to allow signal handler to access all_results
+    results_container = {'data': all_results}
+    
     def signal_handler(signum, frame):
         logger.warning(f"Received signal {signum}! Saving checkpoint...")
-        if checkpoint_file:
-            save_checkpoint(all_results, checkpoint_file)
-            logger.info(f"Checkpoint saved: {len(all_results)} mappings")
+        if checkpoint_file and results_container['data']:
+            save_checkpoint(results_container['data'], checkpoint_file)
+            logger.info(f"Checkpoint saved: {len(results_container['data'])} mappings")
         sys.exit(1)
     
     signal.signal(signal.SIGTERM, signal_handler)
     signal.signal(signal.SIGINT, signal_handler)  # Ctrl+C
     
     # Process in parallel with periodic checkpointing
+    batch_count = 0
     try:
         with Pool(processes=num_workers) as pool:
             for i, batch_result in enumerate(pool.imap_unordered(process_pdb_chain_batch, work_items)):
+                # Update results
                 all_results.update(batch_result)
+                results_container['data'] = all_results
+                batch_count += 1
+                
+                logger.info(f"Collected batch {i+1}/{len(work_items)} - Total unique mappings so far: {len(all_results)}")
                 
                 # Save checkpoint every 10 batches or at the end
-                if checkpoint_file and (i % 10 == 0 or i == len(work_items) - 1):
+                if checkpoint_file and (batch_count % 10 == 0 or i == len(work_items) - 1):
                     save_checkpoint(all_results, checkpoint_file)
-                    logger.info(f"Checkpoint saved: {len(all_results)} mappings")
+                    logger.info(f"✓ Checkpoint saved: {len(all_results)} mappings")
     
-    except (KeyboardInterrupt, SystemExit):
-        logger.warning("Process interrupted! Saving checkpoint...")
-        if checkpoint_file:
+    except (KeyboardInterrupt, SystemExit) as e:
+        logger.warning(f"Process interrupted: {e}! Saving checkpoint...")
+        if checkpoint_file and all_results:
             save_checkpoint(all_results, checkpoint_file)
+            logger.info(f"Checkpoint saved: {len(all_results)} mappings")
+        raise
+    
+    except Exception as e:
+        logger.error(f"Unexpected error: {e}")
+        if checkpoint_file and all_results:
+            save_checkpoint(all_results, checkpoint_file)
+            logger.info(f"Emergency checkpoint saved: {len(all_results)} mappings")
         raise
     
     logger.info(f"Mapping complete! Total mappings: {len(all_results)}")
@@ -335,6 +384,18 @@ def main():
     num_workers = args.workers if args.workers else max(1, cpu_count() - 1)
     logger.info(f"Using {num_workers} parallel workers")
     
+    # Test API connectivity
+    logger.info("\nTesting RCSB API connectivity...")
+    try:
+        test_response = requests.get('https://data.rcsb.org/graphql', timeout=5)
+        logger.info(f"✓ API accessible (status: {test_response.status_code})")
+    except requests.exceptions.Timeout:
+        logger.error("✗ API timeout - network issue or firewall blocking access")
+    except requests.exceptions.ConnectionError as e:
+        logger.error(f"✗ Cannot connect to API: {e}")
+    except Exception as e:
+        logger.error(f"✗ API test failed: {e}")
+    
     # Setup checkpoint file
     checkpoint_file = None
     if not args.no_checkpoint:
@@ -376,6 +437,15 @@ def main():
     logger.info(f"Unique PDB+Chain combinations: {len(pdb_chain_list)}")
     logger.info(f"Sample: {pdb_chain_list[:5]}")
     
+    # Test single mapping before starting parallel processing
+    if pdb_chain_list:
+        logger.info("\nTesting single mapping...")
+        test_pdb, test_chain = pdb_chain_list[0]
+        test_result = map_pdb_chain_to_uniprot_api(test_pdb, test_chain)
+        logger.info(f"Test mapping {test_pdb} chain {test_chain} → {test_result}")
+        if not test_result:
+            logger.warning("Test mapping returned no results - check API connectivity or data")
+    
     # Parallel mapping
     logger.info("\n" + "="*80)
     logger.info("Starting parallel mapping...")
@@ -393,7 +463,16 @@ def main():
     elapsed_time = time.time() - start_time
     
     logger.info(f"\nMapping completed in {elapsed_time:.2f} seconds")
-    logger.info(f"Average time per mapping: {elapsed_time/len(pdb_chain_list):.2f} seconds")
+    if len(pdb_chain_list) > 0:
+        logger.info(f"Average time per mapping: {elapsed_time/len(pdb_chain_list):.2f} seconds")
+    
+    # Debug: Check what we got
+    logger.info(f"\nDEBUG: mapping_results type: {type(mapping_results)}")
+    logger.info(f"DEBUG: mapping_results length: {len(mapping_results)}")
+    if mapping_results:
+        logger.info(f"DEBUG: First 3 mappings: {dict(list(mapping_results.items())[:3])}")
+    else:
+        logger.error("WARNING: mapping_results is empty!")
     
     # Add results to dataframe
     df['pdb_chain_key'] = df['pdb_id'] + '_' + df['receptor_chain']
