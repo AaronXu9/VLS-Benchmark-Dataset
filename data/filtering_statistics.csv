@@ -1,6 +1,6 @@
-Step,Remaining,Removed,% Removed,% of Initial
-Initial,"1,357,906",0,0.0%,100.0%
-After chain limits,"1,225,858","132,048",9.7%,90.3%
-After ligand type filter,"533,706","692,152",56.5%,39.3%
-After interaction stats,"327,144","206,562",38.7%,24.1%
-After MW filter,"114,537","212,607",65.0%,8.4%
+Metric,Initial,After Quality,After Dedup,After Lipinski,Quality Retention (%),Dedup Retention (%),Lipinski Retention (%),Overall Retention (%)
+Activities,1083000,835715,2295,0,77.2,0.3,0.0,0.0
+Unique Compounds,1499,1240,1240,0,82.7,100.0,0.0,0.0
+Unique UniProt IDs,361,361,1,0,100.0,0.3,0.0,0.0
+Unique Assays,631,504,504,0,79.9,100.0,0.0,0.0
+Unique Targets,259,238,238,0,91.9,100.0,0.0,0.0
