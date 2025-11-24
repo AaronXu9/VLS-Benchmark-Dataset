@@ -88,21 +88,45 @@ def query_chembl_activities_enriched(uniprot_id, standard_types=['IC50', 'Ki', '
     logger = logging.getLogger(__name__)
     
     try:
-        # Step 1: Query activities
-        activities = activity_client.filter(
-            target_organism='Homo sapiens',
-            standard_type__in=standard_types,
-            target_components__accession=uniprot_id
-        )
+        # Step 1: First get target_chembl_id from UniProt accession
+        # NOTE: target_components__accession filter doesn't work properly in ChEMBL API
+        # We must use target_chembl_id instead
+        logger.info(f"{uniprot_id}: Looking up target_chembl_id...")
+        targets = target_client.filter(target_components__accession=uniprot_id)
         
-        if max_activities is not None:
-            activities = activities[:max_activities]
-        
-        if not activities:
+        if not targets:
+            logger.warning(f"{uniprot_id}: No targets found in ChEMBL")
             return None
         
-        # Convert to list of dicts
-        activities_list = [dict(act) for act in activities]
+        # Get all target_chembl_ids for this UniProt ID
+        target_chembl_ids = [t['target_chembl_id'] for t in targets]
+        logger.info(f"{uniprot_id}: Found {len(target_chembl_ids)} targets: {target_chembl_ids}")
+        
+        # Step 2: Query activities using target_chembl_id
+        all_activities = []
+        for target_chembl_id in target_chembl_ids:
+            activities = activity_client.filter(
+                target_organism='Homo sapiens',
+                standard_type__in=standard_types,
+                target_chembl_id=target_chembl_id
+            )
+            
+            if activities:
+                if max_activities is not None:
+                    # Limit per target
+                    activities = activities[:max_activities]
+                all_activities.extend([dict(act) for act in activities])
+        
+        logger.info(f"{uniprot_id}: Retrieved {len(all_activities)} activities from {len(target_chembl_ids)} targets")
+        
+        if not all_activities:
+            return None
+        
+        # Apply max_activities limit to total
+        if max_activities is not None and len(all_activities) > max_activities:
+            all_activities = all_activities[:max_activities]
+        
+        activities_list = all_activities
         
         # Step 2: Enrich with assay details (STRONGLY RECOMMENDED)
         if enrich_assays:

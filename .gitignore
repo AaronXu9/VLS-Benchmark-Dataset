@@ -48,12 +48,24 @@ data/pruning_plots_test/
 data/test*
 data/raw/
 decoy/
+data/chembl_*/
+data/output/
+data/overlapping_assays-main/
+data/overlapping_assays-main.zip
+data/data/
+doe_out/
+*.backup
+*copy.ipynb
+data/chembl_parallel_*/
 
 # Keep only summary files in data/
 !data/filtering_statistics.csv
 !data/filtering_summary.txt
 !data/gnina_runsNposes_benchmark_inputs.csv
 !data/affinity/retrieval_results.txt
+!data/annotation_table_with_uniprot_mapping.json
+!data/annotation_table_with_uniprot_summary.json
+!data/per_uniprot_summary.csv
 
 # IDE
 .vscode/
