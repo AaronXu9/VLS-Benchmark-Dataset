@@ -98,7 +98,7 @@ def get_sucos_score(
 ) -> float:
     fm_score = get_feature_map_score(mol_1, mol_2, score_mode)
     fm_score = np.clip(fm_score, 0, 1)
-t
+
     protrude_dist = rdShapeHelpers.ShapeProtrudeDist(
         mol_1, mol_2, allowReordering=False
     )

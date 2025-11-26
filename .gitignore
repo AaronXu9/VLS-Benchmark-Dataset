@@ -57,6 +57,10 @@ doe_out/
 *.backup
 *copy.ipynb
 data/chembl_parallel_*/
+data/ligand_matches_inchikey.csv
+
+# ignore the similarity scores 
+similarity_scores/
 
 # Keep only summary files in data/
 !data/filtering_statistics.csv
