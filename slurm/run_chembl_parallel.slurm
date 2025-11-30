@@ -59,7 +59,7 @@ echo "=================================================="
 echo "Starting ChEMBL parallel retrieval..."
 echo "=================================================="
 
-python retrieve_chembl_parallel.py \
+python scripts/retrieve_chembl_parallel.py \
     --input data/annotation_table_with_uniprot.parquet \
     --output /project2/katritch_223/aoxu/PLATE-VS/raw \
     --final-output /project2/katritch_223/aoxu/PLATE-VS/chembl_activities_merged.parquet \

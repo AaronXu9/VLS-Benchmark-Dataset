@@ -204,7 +204,7 @@ Provides:
 3. **Caching**: Save intermediate results (per-assay, per-target)
 4. **Parallel Processing**: Can parallelize by UniProt ID
 
-## Impact on retrieve_chembl_parallel.py
+## Impact on scripts/retrieve_chembl_parallel.py
 
 The current script uses only the **activity client**. To get complete assay information:
 

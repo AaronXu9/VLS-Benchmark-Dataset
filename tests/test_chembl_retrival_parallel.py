@@ -54,7 +54,7 @@ def main():
     
     cmd = [
         sys.executable,
-        'retrieve_chembl_parallel.py',
+        'scripts/retrieve_chembl_parallel.py',
         '--input', str(test_file),
         '--output', 'data/chembl_test',
         '--final-output', 'data/chembl_test/chembl_test_merged.parquet',

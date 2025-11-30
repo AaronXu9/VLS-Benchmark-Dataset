@@ -10,6 +10,7 @@ Tests cover:
 
 import os
 import tempfile
+import sys
 import unittest
 from pathlib import Path
 from unittest.mock import MagicMock, patch
@@ -18,6 +19,9 @@ import numpy as np
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import AllChem, rdMolAlign
+
+# Add scripts directory to path to allow importing the module
+sys.path.append(str(Path(__file__).parent.parent / "scripts"))
 
 # Import the module under test
 from pli_similarity_scorer import (

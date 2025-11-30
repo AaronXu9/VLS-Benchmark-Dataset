@@ -4,7 +4,7 @@ This guide explains how to run the parallel ChEMBL retrieval on USC CARC computi
 
 ## Overview
 
-The parallel version (`retrieve_chembl_parallel.py`) is optimized for HPC environments with:
+The parallel version (`scripts/retrieve_chembl_parallel.py`) is optimized for HPC environments with:
 
 - **Multiprocessing**: Processes multiple UniProt IDs simultaneously
 - **Resume capability**: Automatically skips already-processed UniProt IDs
@@ -33,8 +33,8 @@ The parallel version (`retrieve_chembl_parallel.py`) is optimized for HPC enviro
 
 ```bash
 # From your local machine
-scp retrieve_chembl_parallel.py <username>@discovery.usc.edu:~/PLATE-VS/
-scp run_chembl_parallel.slurm <username>@discovery.usc.edu:~/PLATE-VS/
+scp scripts/retrieve_chembl_parallel.py <username>@discovery.usc.edu:~/PLATE-VS/scripts/
+scp slurm/run_chembl_parallel.slurm <username>@discovery.usc.edu:~/PLATE-VS/slurm/
 scp data/annotation_table_with_uniprot.parquet <username>@discovery.usc.edu:~/PLATE-VS/data/
 ```
 
@@ -99,14 +99,14 @@ scancel <JOB_ID>
 sbatch --cpus-per-task=32 --mem=64GB run_chembl_parallel.slurm
 
 # Process in chunks (for very large datasets)
-python retrieve_chembl_parallel.py \
+python scripts/retrieve_chembl_parallel.py \
     --input data/annotation_table_with_uniprot.parquet \
     --output data/chembl_parallel \
     --workers 32 \
     --chunk-size 100
 
 # Skip final merge (useful for testing)
-python retrieve_chembl_parallel.py \
+python scripts/retrieve_chembl_parallel.py \
     --input data/annotation_table_with_uniprot.parquet \
     --output data/chembl_parallel \
     --workers 16 \

@@ -302,7 +302,7 @@ def merge_activities_with_systems(annotation_file, output_dir, final_output):
     logger.info("Merging ChEMBL activities with PLINDER systems...")
     
     # Load annotation table
-    df = pd.read_parquet(annotation_file)
+    df = load_parquet_safe(annotation_file)
     
     # Explode uniprot_ids (each system may have multiple UniProt IDs)
     df_exploded = df.explode('uniprot_ids')

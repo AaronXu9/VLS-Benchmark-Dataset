@@ -1,13 +1,13 @@
 # Parallel UniProt Extraction - Testing Results
 
 ## Overview
-Successful testing of `extract_uniprot_parallel.py` on subset data confirms script is ready for full-scale deployment on USC CARC.
+Successful testing of `scripts/extract_uniprot_parallel.py` on subset data confirms script is ready for full-scale deployment on USC CARC.
 
 ## Test Results
 
 ### Test 1: Small Scale (50 systems, 4 workers)
 ```bash
-python extract_uniprot_parallel.py \
+python scripts/extract_uniprot_parallel.py \
   --input data/annotation_table_filtered.parquet \
   --output data/test_uniprot_parallel.parquet \
   --test 50 \
@@ -30,7 +30,7 @@ python extract_uniprot_parallel.py \
 
 ### Test 2: Medium Scale (200 systems, 8 workers)
 ```bash
-python extract_uniprot_parallel.py \
+python scripts/extract_uniprot_parallel.py \
   --input data/annotation_table_filtered.parquet \
   --output data/test_uniprot_parallel_200.parquet \
   --test 200 \
@@ -94,7 +94,7 @@ Assuming ~7,500 unique PDB+Chain combinations (based on test ratios):
 ### 1. Run Full UniProt Extraction
 ```bash
 # On local or CARC
-python extract_uniprot_parallel.py \
+python scripts/extract_uniprot_parallel.py \
   --input data/annotation_table_filtered.parquet \
   --output data/annotation_table_with_uniprot.parquet \
   --workers 16 \
@@ -104,7 +104,7 @@ python extract_uniprot_parallel.py \
 ### 2. Deploy to USC CARC
 ```bash
 # Transfer files
-scp extract_uniprot_parallel.py <user>@discovery.usc.edu:~/PLATE-VS/
+scp scripts/extract_uniprot_parallel.py <user>@discovery.usc.edu:~/PLATE-VS/scripts/
 scp data/annotation_table_filtered.parquet <user>@discovery.usc.edu:~/PLATE-VS/data/
 
 # Create SLURM job script (if needed)

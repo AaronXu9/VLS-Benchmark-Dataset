@@ -41,7 +41,7 @@ python -c "import requests; print(f'requests: {requests.__version__}')"
 echo "=========================================="
 
 # Run the UniProt extraction script
-python extract_uniprot_parallel.py \
+python scripts/extract_uniprot_parallel.py \
     --input data/annotation_table_filtered.parquet \
     --output data/annotation_table_with_uniprot.parquet \
     --workers 16 \
