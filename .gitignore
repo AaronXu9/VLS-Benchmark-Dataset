@@ -59,6 +59,19 @@ doe_out/
 data/chembl_parallel_*/
 data/ligand_matches_inchikey.csv
 
+# DeepCoy generated outputs
+external/DeepCoy/*_generated_smiles_zinc
+external/DeepCoy/*_params_zinc.json
+external/DeepCoy/*.json
+external/DeepCoy/data/*.json
+!external/DeepCoy/examples/*.json
+external/DeepCoy/evaluation_output/
+
+# SLURM outputs
+slurm/*.err
+slurm/*.out
+slurm/logs/
+
 # ignore the similarity scores 
 similarity_scores/
 

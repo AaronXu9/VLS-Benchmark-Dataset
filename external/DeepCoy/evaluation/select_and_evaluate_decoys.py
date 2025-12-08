@@ -43,7 +43,19 @@ def select_and_evaluate_decoys(f, file_loc='./', output_loc='./', dataset='dude'
     # Filter dupes and actives that are too small
     dec_results.append(len(set([d[0] for d in data])))
     seen = set()
-    data = [d for d in data if Chem.MolFromSmiles(d[0]).GetNumHeavyAtoms()>min_active_size]
+    # Filter out invalid SMILES and small molecules
+    def is_valid_and_large_enough(d):
+        mol = Chem.MolFromSmiles(d[0])
+        if mol is None:
+            return False
+        return mol.GetNumHeavyAtoms() > min_active_size
+    data = [d for d in data if is_valid_and_large_enough(d)]
+    
+    # Check if we have any valid data after filtering
+    if len(data) == 0:
+        print(f"WARNING: No valid molecules found in {f} after filtering, skipping")
+        return None
+    
     unique_data = [x for x in data if not (tuple(x) in seen or seen.add(tuple(x)))]
     in_mols = [d[0] for d in data]
     gen_mols = [d[1] for d in data]
@@ -272,13 +284,18 @@ if __name__ == "__main__":
 
     # Get input files
     if os.path.isdir(file_loc):
-        res_files = [f for f in os.listdir(file_loc) if os.path.isfile(file_loc+f)]
+        # Only process .txt files (decoy output files), skip JSON and other files
+        res_files = [f for f in os.listdir(file_loc) if os.path.isfile(file_loc+f) and f.endswith('.txt')]
         res_files = sorted(res_files)
     elif os.path.isfile(file_loc):
         res_files = [file_loc]
         file_loc = './'
     else:
         print("Please specify a valid file or directory")
+        exit()
+    
+    if len(res_files) == 0:
+        print("No .txt files found in the specified directory")
         exit()
 
     # Declare metric variables
@@ -301,6 +318,8 @@ if __name__ == "__main__":
 
     # Write performance results
     for dec_results in results:
+        if dec_results is None:  # Skip files that had no valid data
+            continue
         with open(output_loc+'/results.csv', 'a') as csvfile:
             writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
             writer.writerow(dec_results) 
