@@ -58,6 +58,8 @@ doe_out/
 *copy.ipynb
 data/chembl_parallel_*/
 data/ligand_matches_inchikey.csv
+data/pdb_chain_uniprot.tsv*
+
 
 # ignore the similarity scores 
 similarity_scores/
