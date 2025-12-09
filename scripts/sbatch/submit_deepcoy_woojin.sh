@@ -10,7 +10,7 @@
 PROJECT_DIR="/scratch1/aoxu/projects/VLS-Benchmark-Dataset"
 # Use shared project2 directory accessible by both accounts
 AFFINITY_DIR="/project2/katritch_223/aoxu/PLATE-VS/data/chembl_affinity"
-SBATCH_SCRIPT="${PROJECT_DIR}/scripts/sbatch/run_deepcoy_single.sbatch"
+SBATCH_SCRIPT="${PROJECT_DIR}/scripts/sbatch/run_deepcoy_single_woojin.sbatch"
 
 # Account settings
 ACCOUNT="woojin"

@@ -2,7 +2,7 @@
 #SBATCH --job-name=dcoy_%j
 #SBATCH --output=/scratch1/woojinl/for_Ao/VLS-Benchmark-Dataset/slurm/deepcoy_%j.out
 #SBATCH --error=/scratch1/woojinl/for_Ao/VLS-Benchmark-Dataset/slurm/deepcoy_%j.err
-#SBATCH --time=04:00:00
+#SBATCH --time=12:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=16G
@@ -42,6 +42,9 @@ OUTPUT_DIR="${TARGET_DIR}/${OUTPUT_SUFFIX}"
 # Load environment - WOOJIN's conda
 module load conda/25.3.0
 source activate /scratch1/woojinl/envs/deepcoy
+
+# Fix protobuf compatibility with TensorFlow 1.x
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 
 echo "============================================="
 echo "DeepCoy Generation: ${UNIPROT_ID}"
