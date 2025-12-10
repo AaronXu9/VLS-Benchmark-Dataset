@@ -32,7 +32,7 @@ PROJECT_DIR="/scratch1/woojinl/for_Ao/VLS-Benchmark-Dataset"
 DEEPCOY_DIR="${PROJECT_DIR}/external/DeepCoy"
 # Use shared project2 directory accessible by both accounts
 AFFINITY_DIR="/project2/katritch_223/aoxu/PLATE-VS/data/chembl_affinity"
-NUM_DECOYS_PER_ACTIVE=20
+NUM_DECOYS_PER_ACTIVE=5
 OUTPUT_SUFFIX="deepcoy_output"
 
 TARGET_DIR="${AFFINITY_DIR}/uniprot_${UNIPROT_ID}"
