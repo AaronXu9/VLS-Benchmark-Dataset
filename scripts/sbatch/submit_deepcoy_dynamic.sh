@@ -42,7 +42,7 @@ echo "============================================="
 
 # Function to count current GPU jobs for THIS user
 count_gpu_jobs() {
-    squeue -u "$USER" -p gpu -h 2>/dev/null | wc -l
+    squeue -u "$USER_NAME" -p gpu -h 2>/dev/null | wc -l
 }
 
 # Function to submit a single job
