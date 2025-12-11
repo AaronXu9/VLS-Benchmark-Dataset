@@ -94,7 +94,11 @@ python DeepCoy.py \
 if [ -f "${OUTPUT_DIR}/${UNIPROT_ID}_generated_decoys.txt" ]; then
     NUM_DECOYS=$(wc -l < "${OUTPUT_DIR}/${UNIPROT_ID}_generated_decoys.txt")
     echo "SUCCESS: Generated ${NUM_DECOYS} decoys for ${UNIPROT_ID}"
+    # Remove lock file on success
+    rm -f "${OUTPUT_DIR}/processing.lock"
 else
     echo "ERROR: Failed to generate decoys"
+    # Remove lock file on failure too (so it can be retried)
+    rm -f "${OUTPUT_DIR}/processing.lock"
     exit 1
 fi

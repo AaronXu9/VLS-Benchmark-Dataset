@@ -1052,8 +1052,11 @@ class DenseGGNNChemModel(ChemModel):
                                                          self.params['encoding_size']) # [1, v, j] 
                     random_normal_states_in = generate_std_normal(1, maximum_length,\
                                                          self.params['hidden_size']) # [1, v, h]
-                    self.generate_graph_with_state(random_normal_states, random_normal_states_in,
-                                                   maximum_length, generated_all_smiles, elements, count)
+                    try:
+                        self.generate_graph_with_state(random_normal_states, random_normal_states_in,
+                                                       maximum_length, generated_all_smiles, elements, count)
+                    except Exception as e:
+                        print("Warning: Skipping generation for one molecule due to error: %s" % str(e))
                     count+=1
             bucket_counters[bucket] += 1
         # Terminate when loop finished

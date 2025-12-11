@@ -10,6 +10,10 @@ def generate_mask(valences, adj_mat, color, real_n_vertices, node_in_focus, chec
     edge_type_mask=[]
     edge_mask=[]
     for neighbor in range(real_n_vertices):
+        # Check bounds for color array to prevent IndexError
+        if neighbor >= len(color):
+            continue
+            
         if neighbor != node_in_focus and color[neighbor] < 2 and \
             not check_adjacent_sparse(adj_mat, node_in_focus, neighbor)[0]:
             min_valence = min(valences[node_in_focus], valences[neighbor], 3)
@@ -189,6 +193,10 @@ def generate_frequencies(valences, adj_mat, color, real_n_vertices, node_in_focu
     transition_frequences = []
     transition_frequences_edge = []
     for neighbor in range(real_n_vertices):
+        # Check bounds for color array to prevent IndexError
+        if neighbor >= len(color):
+            continue
+            
         if neighbor != node_in_focus and color[neighbor] < 2 and \
             not check_adjacent_sparse(adj_mat, node_in_focus, neighbor)[0]:
             min_valence = min(valences[node_in_focus], valences[neighbor], 3)
