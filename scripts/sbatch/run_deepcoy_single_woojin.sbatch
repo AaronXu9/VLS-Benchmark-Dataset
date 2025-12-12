@@ -60,6 +60,18 @@ fi
 
 mkdir -p ${OUTPUT_DIR}
 
+# Detect dataset type (zinc vs zinc_phosphorus)
+echo "Detecting dataset type..."
+cd ${PROJECT_DIR}
+DATASET_TYPE=$(python scripts/detect_dataset_type.py "${INPUT_PARQUET}")
+echo "Detected dataset: ${DATASET_TYPE}"
+
+if [ "$DATASET_TYPE" == "zinc_phosphorus" ]; then
+    MODEL_FILE="models/models/DeepCoy_DUDE_phosphorus_model_e10.pickle"
+else
+    MODEL_FILE="models/models/DeepCoy_DUDE_model_e09.pickle"
+fi
+
 # Step 1: Convert parquet to JSON
 echo "Step 1: Converting parquet to JSON..."
 cd ${PROJECT_DIR}
@@ -70,7 +82,7 @@ python scripts/prepare_deepcoy_input.py \
     --smiles_column canonical_smiles \
     --min_heavy_atoms 10 \
     --max_heavy_atoms 80 \
-    --dataset zinc
+    --dataset "${DATASET_TYPE}"
 
 if [ ! -f "${OUTPUT_DIR}/molecules_${UNIPROT_ID}_actives.json" ]; then
     echo "ERROR: Failed to create JSON"
@@ -90,8 +102,8 @@ echo "Step 2: Generating decoys..."
 cd ${DEEPCOY_DIR}
 
 python DeepCoy.py \
-    --restore models/models/DeepCoy_DUDE_model_e09.pickle \
-    --dataset zinc \
+    --restore "${MODEL_FILE}" \
+    --dataset "${DATASET_TYPE}" \
     --config "{\"generation\": true, \"number_of_generation_per_valid\": ${NUM_DECOYS_PER_ACTIVE}, \"batch_size\": 1, \"train_file\": \"${OUTPUT_DIR}/molecules_${UNIPROT_ID}_actives.json\", \"valid_file\": \"${OUTPUT_DIR}/molecules_${UNIPROT_ID}_actives.json\", \"output_name\": \"${OUTPUT_DIR}/${UNIPROT_ID}_generated_decoys.txt\"}"
 
 if [ -f "${OUTPUT_DIR}/${UNIPROT_ID}_generated_decoys.txt" ]; then

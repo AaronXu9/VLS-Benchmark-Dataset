@@ -225,6 +225,8 @@ def generate_frequencies(valences, adj_mat, color, real_n_vertices, node_in_focu
                 radius = 5
                 submol_smiles = ""
                 while submol_smiles == "":
+                    if radius < 1:
+                        break
                     env = Chem.FindAtomEnvironmentOfRadiusN(new_mol,radius,int(node_in_focus))
                     amap={}
                     submol=Chem.PathToSubmol(new_mol,env,atomMap=amap)
