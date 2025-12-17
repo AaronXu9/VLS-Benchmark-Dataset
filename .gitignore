@@ -59,7 +59,11 @@ doe_out/
 data/chembl_parallel_*/
 data/ligand_matches_inchikey.csv
 data/pdb_chain_uniprot.tsv*
-
+data/pdb_seqres.txt
+data/multi_mapping_pdb_chains.csv
+data/df_uniprotid_smiactives_mindist.csv
+data/uniprot_clusters_annotated.csv
+data/uniprot_bipartite_cluster_labels_filtered.csv
 
 # ignore the similarity scores 
 similarity_scores/
