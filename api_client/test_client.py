@@ -20,8 +20,9 @@ class TestDrugBenchClient(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         # Clean up downloaded files
-        if cls.test_dir.exists():
-            shutil.rmtree(cls.test_dir)
+        # if cls.test_dir.exists():
+        #     shutil.rmtree(cls.test_dir)
+        pass
 
     def test_01_service_status(self):
         """Test if the service is reachable."""
@@ -73,6 +74,19 @@ class TestDrugBenchClient(unittest.TestCase):
             print(f"Downloaded CSV to {path}")
         else:
             print("Skipping CSV check (download failed or file not found)")
+
+    def test_06_download_similarity_sdf(self):
+        """Test downloading similarity SDF archive."""
+        print("\nTesting similarity SDF download...")
+        # Use a small threshold to ensure it exists
+        path = self.client.download_similarity_sdf(similarity_threshold=0.9)
+        
+        if path:
+            self.assertTrue(path.exists())
+            self.assertTrue(path.stat().st_size > 0)
+            print(f"Downloaded SDF archive to {path}")
+        else:
+            print("Skipping SDF check (download failed or file not found)")
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

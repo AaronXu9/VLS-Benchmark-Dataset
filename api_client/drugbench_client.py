@@ -16,8 +16,6 @@ Usage:
 Requirements:
     pip install requests pandas
     
-Author: PLATE-VS Team
-Date: December 2025
 """
 
 import os
@@ -379,7 +377,7 @@ def main():
         print(df.head())
     else:
         print("No ligands found or error occurred.")
-        
+    
     # Example 2: Download Similarity Data
     print("\nDownloading similarity data (threshold 0.9)...")
     client.download_similarity_matrix_csv(0.9)

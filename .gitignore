@@ -64,6 +64,7 @@ data/multi_mapping_pdb_chains.csv
 data/df_uniprotid_smiactives_mindist.csv
 data/uniprot_clusters_annotated.csv
 data/uniprot_bipartite_cluster_labels_filtered.csv
+test_downloads/
 
 # ignore the similarity scores 
 similarity_scores/
