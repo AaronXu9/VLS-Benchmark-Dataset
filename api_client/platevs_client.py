@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-DrugBench API Client
-====================
+PLATE-VS API Client
+===================
 
-A template script for accessing DrugBench web services (https://www.drugbench.org/).
+A template script for accessing PLATE-VS web services (https://www.drugbench.org/).
 
 This client provides functionality to:
 1. Search by UniProt ID (protein ID) to get affinity data
@@ -11,7 +11,7 @@ This client provides functionality to:
 3. Download similarity matrix data (CSV and SDF files) for given thresholds
 
 Usage:
-    python drugbench_client.py
+    python platevs_client.py
 
 Requirements:
     pip install requests pandas
@@ -30,11 +30,11 @@ import time
 import urllib.parse
 
 
-class DrugBenchClient:
+class PlateVSClient:
     """
-    Client for interacting with DrugBench web services.
+    Client for interacting with PLATE-VS web services.
     
-    The DrugBench database provides protein-ligand affinity data that can be
+    The PLATE-VS database provides protein-ligand affinity data that can be
     accessed through various search methods and bulk downloads.
     """
     
@@ -44,9 +44,9 @@ class DrugBenchClient:
     # Available qcov levels for similarity matrix
     QCOV_LEVELS = [50, 70, 95, 100]
     
-    def __init__(self, timeout: int = 30, output_dir: str = "./drugbench_data"):
+    def __init__(self, timeout: int = 30, output_dir: str = "./platevs_data"):
         """
-        Initialize the DrugBench client.
+        Initialize the PLATE-VS client.
         
         Args:
             timeout: Request timeout in seconds
@@ -57,7 +57,7 @@ class DrugBenchClient:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.session = requests.Session()
         self.session.headers.update({
-            'User-Agent': 'DrugBench-Python-Client/1.0',
+            'User-Agent': 'PLATE-VS-Python-Client/1.0',
             'Accept': 'application/json, text/csv, */*'
         })
     
@@ -327,7 +327,7 @@ class DrugBenchClient:
     
     def check_service_status(self) -> Dict[str, bool]:
         """
-        Check if DrugBench web services are accessible.
+        Check if PLATE-VS web services are accessible.
         
         Returns:
             Dictionary with service status
@@ -355,14 +355,14 @@ class DrugBenchClient:
 
 def main():
     """
-    Main function demonstrating DrugBench API client usage.
+    Main function demonstrating PLATE-VS API client usage.
     """
     print("=" * 60)
-    print("DrugBench API Client - Template Script")
+    print("PLATE-VS API Client - Template Script")
     print("https://www.drugbench.org/")
     print("=" * 60)
     
-    client = DrugBenchClient()
+    client = PlateVSClient()
     
     # Check status
     print("\nChecking service status...")

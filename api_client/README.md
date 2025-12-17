@@ -1,10 +1,10 @@
-# DrugBench API Client
+# PLATE-VS API Client
 
-A Python template script for accessing DrugBench web services at https://www.drugbench.org/
+A Python template script for accessing PLATE-VS web services at https://www.drugbench.org/
 
 ## Overview
 
-This client provides programmatic access to the DrugBench database, which contains protein-ligand affinity data. The client supports:
+This client provides programmatic access to the PLATE-VS database, which contains protein-ligand affinity data. The client supports:
 
 1. **Search by UniProt ID** - Query affinity data for a specific protein
 2. **Search by SMILES** - Query affinity data for a specific compound (exact or similarity search)
@@ -20,10 +20,10 @@ pip install -r requirements.txt
 ## Quick Start
 
 ```python
-from drugbench_client import DrugBenchClient
+from platevs_client import PlateVSClient
 
 # Initialize the client
-client = DrugBenchClient(output_dir="./downloads")
+client = PlateVSClient(output_dir="./downloads")
 
 # Check service status
 status = client.check_service_status()
@@ -44,12 +44,12 @@ sdf_path = client.download_similarity_sdf(0.9)
 
 ## API Reference
 
-### DrugBenchClient
+### PlateVSClient
 
 #### Constructor
 
 ```python
-DrugBenchClient(timeout=30, output_dir="./drugbench_data")
+PlateVSClient(timeout=30, output_dir="./platevs_data")
 ```
 
 - `timeout`: Request timeout in seconds
@@ -70,14 +70,14 @@ DrugBenchClient(timeout=30, output_dir="./drugbench_data")
 
 ## Notes
 
-- **Endpoints**: The client uses the `/api` endpoints of the DrugBench website.
+- **Endpoints**: The client uses the `/api` endpoints of the PLATE-VS website.
 - **Rate Limiting**: Be respectful of the server; the client includes 1-second delays between batch downloads.
 - **SDF Downloads**: SDF files are downloaded as `.tar.gz` archives from S3 (via signed URLs).
 
 ## Files
 
-- `drugbench_client.py` - Main client implementation
-- `drugbench_example.ipynb` - Jupyter notebook with interactive examples
+- `platevs_client.py` - Main client implementation
+- `platevs_example.ipynb` - Jupyter notebook with interactive examples
 - `requirements.txt` - Python dependencies
 - `README.md` - This documentation
 

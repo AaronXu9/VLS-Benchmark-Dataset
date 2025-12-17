@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-DrugBench Bulk Downloader
-=========================
+PLATE-VS Bulk Downloader
+========================
 
-A script to download the complete DrugBench similarity matrix dataset.
+A script to download the complete PLATE-VS similarity matrix dataset.
 It iterates through all combinations of similarity thresholds and query coverage levels.
 
 Usage:
@@ -13,23 +13,23 @@ Usage:
 
 import time
 from pathlib import Path
-from drugbench_client import DrugBenchClient
+from platevs_client import PlateVSClient
 
 def main():
     # Configuration
-    OUTPUT_DIR = "./drugbench_full_dataset"
+    OUTPUT_DIR = "./platevs_full_dataset"
     THRESHOLDS = [0.0, 0.1, 0.3, 0.5, 0.7, 0.9]
     QCOV_LEVELS = [50, 70, 95, 100]
     
     print("=" * 60)
-    print("DrugBench Bulk Downloader")
+    print("PLATE-VS Bulk Downloader")
     print("=" * 60)
     print(f"Output Directory: {OUTPUT_DIR}")
     print(f"Thresholds: {THRESHOLDS}")
     print(f"Qcov Levels: {QCOV_LEVELS}")
     
     # Initialize client
-    client = DrugBenchClient(output_dir=OUTPUT_DIR)
+    client = PlateVSClient(output_dir=OUTPUT_DIR)
     
     # Check connectivity first
     print("\nChecking service status...")

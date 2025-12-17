@@ -2,11 +2,11 @@ import unittest
 import os
 import shutil
 from pathlib import Path
-from drugbench_client import DrugBenchClient
+from platevs_client import PlateVSClient
 
-class TestDrugBenchClient(unittest.TestCase):
+class TestPlateVSClient(unittest.TestCase):
     """
-    Integration tests for DrugBenchClient.
+    Integration tests for PlateVSClient.
     
     Note: These tests hit the live API at https://www.drugbench.org.
     Ensure you have internet connection.
@@ -15,7 +15,7 @@ class TestDrugBenchClient(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.test_dir = Path("./test_downloads")
-        cls.client = DrugBenchClient(output_dir=str(cls.test_dir))
+        cls.client = PlateVSClient(output_dir=str(cls.test_dir))
         
     @classmethod
     def tearDownClass(cls):
