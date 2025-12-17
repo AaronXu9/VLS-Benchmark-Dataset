@@ -338,14 +338,13 @@ class DrugBenchClient:
         
         endpoints = {
             'main': self.BASE_URL,
-            'api': self.API_URL
+            'api': f"{self.API_URL}/health"
         }
         
         for name, url in endpoints.items():
             try:
-                response = self.session.head(url, timeout=10)
-                # 405 is fine for API root if it doesn't support HEAD/GET
-                status[name] = response.status_code in [200, 405]
+                response = self.session.get(url, timeout=10)
+                status[name] = response.status_code == 200
             except requests.exceptions.RequestException:
                 status[name] = False
         
